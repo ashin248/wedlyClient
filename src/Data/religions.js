@@ -1,0 +1,114 @@
+
+export const religions = [
+  {
+    name:`I don't believe in religion.`
+  },
+  {
+    name: "Christianity",
+    branches: [ "Catholicism", "Roman Catholicism", "Eastern Catholic Churches", "Protestantism", "Baptist", "Baptist Christianity", "Methodism", "Lutheranism", "Presbyterianism", "Pentecostalism", "Seventh-day Adventism", "Evangelicalism", "Eastern Orthodoxy", "Greek Orthodoxy", "Russian Orthodoxy", "Coptic Christianity", "Coptic Orthodox Christianity", "Syriac Christianity", "Syriac Orthodox Church", "Armenian Apostolic Church", "Assyrian Church of the East", "Assyrian Neo-Aramaic Christianity", "Restorationism", "Jehovah's Witnesses", "Mormonism", "Church of Jesus Christ of Latter-day Saints", "Apostolic Christianity", "Apostolic Christian Church", "Arminianism", "Brethren", "Christian Anarchism", "Christian Deism", "Christian Existentialism", "Christian Feminism", "Christian Humanism", "Christian Mysticism", "Christian Reconstructionism", "Christian Socialism", "Christian Universalism", "Christian Science", "Church of God (Seventh Day)", "Church of the Nazarene", "Ethiopian Orthodox Tewahedo Church", "Evangelical Lutheran Church in America", "Free Will Baptist", "Hutterites", "Iglesia ni Cristo", "Independent Fundamental Baptist", "Liberal Christianity", "Lollardy", "Mennonites", "Moravian Church", "Muggletonianism", "New Apostolic Church", "Nondenominational Christianity", "Old Believers (Russian Orthodoxy)", "Old Catholic Church", "Pietism", "Postmodern Christianity", "Progressive Christianity", "Quakerism", "Quakerism (Conservative)", "Quakerism (Liberal)", "Reformed Christianity", "Reformed Baptist", "Religious Science", "Revivalism", "Romanian Orthodoxy", "Rosicrucianism", "Sacred Harp", "Scottish Presbyterianism", "Serbian Orthodoxy", "Shakerism", "Stundism", "Ukrainian Orthodoxy", "Unificationism", "Unitarianism", "Universalism", "Unitarian Universalism", "Waldensianism", "Wesleyanism", "Zion Christian Church",
+    ],
+    SocialStratification: [ "Indian Christian Caste System (General)", "Syrian Christians (Kerala, India)", "Knanaya Christians (Kerala, India) - Endogamous group with caste-like practices", "Dalit Christians (India)", "SC Christians (India)", "ST Christians (India)", "OBC Christians (India)", "Goan Christian Castes (e.g., Bamonns, Chardos, Sudirs)",
+    ],
+  },
+  {
+    name: "Islam",
+    branches: [ "Sunni Islam", "Shi'a Islam", "Nation of Islam", "Ahmadiyya", "Alawi Islam", "Alevism", "Bektashism", "Druze Faith", "Folk Islam", "Sufism", "Universal Sufism", "Yarsanism", "Ansarullah",
+    ],
+    SocialStratification: [ "Ashraf (Muslims of foreign descent/higher status)", "Ajlaf (Muslims of local convert descent/middle status)", "Arzal (Muslims of former untouchable descent/lower status)", "Pasmanda (Coalition of backward and Dalit Muslims)", "SC Muslims (India)",   "ST Muslims (India)",  "OBC Muslims (India)",  "Sayyid (Claimed descendants of Prophet Muhammad)", "Shaykh (Claimed descendants of Arab/Persian immigrants)", "Pathan (Descendants of Afghan migrants)", "Mughal (Descendants of Central Asian/Iranian migrants)", "Julaha (Weaver community, often lower status)", "Dhobi (Washerman community, often lower status)", "Nai (Barber community, often lower status)", "Mehtar/Halalkhor (Sweeper community, often lower status)",
+    ],
+  },
+  {
+    name: "Hinduism",
+    branches: [ "Vaishnavism", "Hare Krishna (ISKCON)", "Ayyavazhi", "Meivazhi", "Shaivism", "Saiva Siddhanta", "Shaktism", "Smartism", "Vedic Religion", "Vedic Hinduism", "Yoga (as a spiritual path)", "Ananda Marga", "Brahma Kumaris", "Brahmoism",
+    ],
+    SocialStratification: [ "Varna System (Brahmin, Kshatriya, Vaishya, Shudra)", "Brahmin",  "Kshatriya",  "Vaishya",  "Shudra",  "Jati System (Sub-castes)", "Dalit (Scheduled Castes)", "SC (Scheduled Castes)",  "Adivasi (Scheduled Tribes)", "ST (Scheduled Tribes)",  "OBC (Other Backward Classes)",  "Untouchables", "Pulayar (Specific Dalit community in Kerala)", "Ezhava",  "Ezhavas (Backward community in Kerala)", "Nair",   "Nair (Forward/Dominant community in Kerala)", "Namboothiri (Brahmin community in Kerala)", "Goud Saraswat Brahmins (Goa/Konkan)", "Padyes (Goa)", "Daivadnyas (Goa)", "Chuhra (Punjab, formerly Dalit)", "Chamar (North India, formerly Dalit)", "Jat (Dominant agricultural community, mostly Sikh/Hindu)", "Rajput (Warrior/Landowning community)", "Ahluwalias (Brewers, often Sikh)", "Kambojs/Kambos (Rural, often Sikh)", "Ramgarhias (Artisans, often Sikh)", "Labanas (Merchants, often Sikh)", "Kumhars (Potters)", "Sunars (Goldsmiths)", "Tarkhans (Carpenters)",
+    ],
+  },
+  {
+    name: "Buddhism",
+    branches: [ "Mahayana Buddhism", "Zen Buddhism", "Zazen (Zen Buddhism)", "Tibetan Buddhism", "Vajrayana Buddhism", "Kagyu Buddhism", "Nichiren Buddhism", "New Kadampa Tradition", "Shin Buddhism", "Theravada Buddhism", "Tantric Buddhism", "Bön",
+    ],
+    SocialStratification: [ "Burakumin (Japan - historical outcast group, sometimes associated with Buddhism)", "Dalit Buddhists (India - converts to escape Hindu caste)", "SC Buddhists (India)",  "ST Buddhists (India)",  "OBC Buddhists (India)",  "Sinhalese Buddhists (Sri Lanka - some traditional hierarchies)",
+    ],
+  },
+  {
+    name: "Sikhism",
+    branches: [ "Khalsa (Sikhism)", "Akali Nihang",
+    ],
+    SocialStratification: [ "Jat Sikhs (Predominant agricultural community)", "Mazhabi Sikhs (Sikhs of Dalit/untouchable origin)", "SC Sikhs (India)",  "ST Sikhs (India)",  "OBC Sikhs (India)",  "Ramdasia Sikhs (Sikhs of Chamar origin)", "Ravidassia Sikhs (Followers of Guru Ravidas, often of Chamar origin)", "Ahluwalias (Brewers)", "Kambojs/Kambos (Rural)", "Ramgarhias (Carpenters/Artisans)", "Bhatra (Traders/Merchants)",
+    ],
+  },
+  {
+    name: "Judaism",
+    branches: [ "Orthodox Judaism", "Hasidism", "Kabbalah", "Chabad Lubavitch", "Reform Judaism", "Reconstructionist Judaism", "Conservative Judaism", "Humanistic Judaism", "Jewish Renewal", "Folk Judaism", "Messianic Judaism", "Samaritanism", "Black Hebrew Israelites", "Nation of Yahweh", "British Israelism",
+    ],
+    SocialStratification: [ "Kohanim (Priestly class, patrilineal descendants of Aaron)", "Levites (Descendants of the Tribe of Levi, assisting priests)", "Israelites (General Jewish population)", "Mamzer (Halakhically illegitimate children with restricted marriage rights)", "Samaritans (Historically considered distinct/lower by some Jews)",
+    ],
+  },
+  {
+    name: "Jainism",
+    branches: [ "Digambara", "Svetambara",
+    ],
+    SocialStratification: [ "Jain Bania (Merchant communities traditionally associated with Jainism)",
+    ],
+  },
+  {
+    name: "Baháʼí Faith",
+    branches: [ "Baháʼí World Faith",
+    ],
+    SocialStratification: [],
+  },
+  {
+    name: "East Asian Religions",
+    branches: [ "Shinto", "Folk Shinto", "Taoism", "Taoist Folk Religion", "Confucianism", "Neo-Confucianism", "Tenrikyo", "Cao Đài", "Cheondoism", "Konkokyo", "Oomoto", "Shinnyo-en", "Shenism",
+    ],
+    SocialStratification: [ "Burakumin (Japan - historical outcast group, applies across religions)", "Ryukyuan (Indigenous people of Ryukyu Islands, distinct spiritual practices)",
+    ],
+  },
+  {
+    name: "Paganism & Neopaganism",
+    branches: [ "Modern Paganism", "Wicca", "Druidry", "Druidry (Modern)", "Neo-Druidism", "Asatru", "Asatru Folk Assembly", "Heathenry", "Norse Paganism", "Odinism", "Celtic Reconstructionist Paganism", "Germanic Neopaganism", "Hellenic Polytheism", "Kemetism", "Kemetic Orthodoxy", "Romuva", "Stregheria", "Adonism", "Eclectic Paganism", "Feri Tradition", "Finnish Neopaganism", "Gaelic Polytheism", "Pagan Federation", "Pagan Reconstructionism", "Pagan Witchcraft", "Ancient Egyptian Religion (Reconstructionist)",
+    ],
+    SocialStratification: [], 
+  },
+  {
+    name: "Zoroastrianism",
+    branches: [ "Parsis (Zoroastrianism)", "Zoroastrianism (Ancient)", "Zoroastrianism (Modern)",
+    ],
+    SocialStratification: [ "Mobads (Priestly class in historical Zoroastrianism)",
+    ],
+  },
+  {
+    name: "Traditional & Indigenous Religions",
+    branches: [ "Native American Religions", "Native American Church", "Red Path (Native American)", "Cherokee Traditional Beliefs", "Creek Traditional Beliefs", "Hopi Traditional Beliefs", "Iroquois Traditional Beliefs", "Muscogee Traditional Beliefs", "African Traditional Religions", "Traditional African Religions", "African Independent Churches", "Aladura", "Yorùbá Religion", "Yoruba Traditional Religion", "Zulu Traditional Religion", "Maasai Religion", "Bushongo Religion", "Shona Traditional Religion", "Tumbuka Religion", "Aboriginal Spirituality", "Indigenous Australian Religions", "Australian Aboriginal Dreamtime", "Inuit Shamanism", "Andean Traditional Religions", "Mayan Traditional Religions", "Aztec Religion (Reconstructionist)", "Hawaiian Religion", "Native Hawaiian Religion", "Sumerian Religion (Reconstructionist)", "Slavic Native Faith", "Tengriism", "Indigenous Religions", "Indigenous Philippine Religions", "Indigenous South American Religions", "Irish Paganism", "Japanese Folk Religion", "Kalahari Traditional Religions", "Kimbanguism", "Kongo Religion", "Māori Traditional Religion", "Mongolian Shamanism", "Polynesian Traditional Religions", "Revitalization Movements (Indigenous)", "Sami Shamanism", "Solomon Islands Traditional Religions", "Somali Traditional Religion", "Traditional Chinese Religions", "Traditional Korean Religions", "Traditional Vietnamese Religions", "Austronesian Traditional Religions", "Anishinaabe Traditional Beliefs", "Hmong Traditional Religion",
+    ],
+    SocialStratification: [], 
+  },
+  {
+    name: "Syncretic & Afro-Diasporic Religions",
+    branches: [ "Rastafarianism", "Rastafari Movement", "Spiritism", "Kardecism", "Santería", "Santería (Lucumí)", "Santeria", "Vodou", "Voodoo (Haitian)", "Voudon (Beninese)", "Candomblé", "Palo Mayombe", "Umbanda", "Santo Daime", "Ifá", "West African Vodun",
+    ],
+    SocialStratification: [], 
+  },
+  {
+    name: "New Religious Movements & Distinct Belief Systems",
+    branches: [ "Scientology", "Raëlism", "Unification Church", "Unificationism", "Aum Shinrikyo", "Heaven's Gate", "Branch Davidians", "Falun Gong", "Damanhur", "Damanhurianism", "Nuwaubian Nation", "Shincheonji", "Unarius", "Aetherius Society", "Divine Light Mission", "Eckankar", "Lemurian Fellowship", "Remnant Fellowship", "Church of All Worlds", "Jediism", "Pastafarianism", "Ancient Astronaut Theory", "Inner Circle (New Age)", "New Age", "Ananda Marga", "Garveyism", "White Supremacist Religions", "Yazidism", "Iglesia Maradoniana",
+    ],
+    SocialStratification: [], 
+  },
+  {
+    name: "Philosophical & Esoteric Beliefs",
+    branches: [ "Gnosticism", "Gnostic Catholic Church", "Manichaeism", "Mandaeism", "Shamanism", "Animism", "Deism", "Pantheism", "Panentheism", "Theosophy", "Anthroposophy", "Esotericism", "Occultism", "Platonism", "Hermeticism", "Orphism", "Mithraism (Modern)", "Nihilism", "Omnism", "Open Theism", "Spiritualism", "Subud", "Transcendentalism", "White Magic", "Creationism", "Fideism", "Fourth Way", "Rosicrucianism", "Cult of the Supreme Being", "Black Nationalism (Religious aspects)",
+    ],
+    SocialStratification: [],
+  },
+  {
+    name: "Non-Theistic & Humanistic Worldviews",
+    branches: [ "Atheism", "Agnosticism", "Humanism", "Ethical Culture", "Secularism", "Cult of Reason", "Spiritual Naturalism", "Unitarian Universalist Association", "Universal Life Church",
+    ],
+    SocialStratification: [], 
+  },
+];
+
+
+

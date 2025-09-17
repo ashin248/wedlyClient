@@ -1,0 +1,50 @@
+@import url('./global/css/global.css');
+
+.App {
+  font-family: var(--font-family);
+  background-color: var(--BackgroundColor-1);
+  min-height: var(--Min_height_100vh);
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--Min_height_100vh);
+  font-size: var(--font-size-medium);
+  color: var(--muted-text);
+}
+
+/* Styling for the main app container */
+.app-container {
+  max-width: var(--max_width_1200);
+  margin: 0 auto;
+  padding: var(--padding-large);
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: var(--border-radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-container {
+    padding: var(--padding-medium);
+  }
+}
