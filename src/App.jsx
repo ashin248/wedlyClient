@@ -54,6 +54,7 @@ function ProtectedRouteWrapper() {
         if (response.status === 200) {
           setIsAuthenticated(true);
           localStorage.setItem('isAuthenticated', 'true');
+          navigate("/information");
         } else {
           setIsAuthenticated(false);
           localStorage.setItem('isAuthenticated', 'false');
