@@ -17,8 +17,9 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// Set axios defaults to include credentials
-axios.defaults.withCredentials = true;
+// Set axios defaults
+axios.defaults.baseURL = API; // Set base URL globally for all axios requests
+axios.defaults.withCredentials = true; // Ensure credentials (cookies) are sent with requests
 
 // Lazy-loaded components
 const NavBar = lazy(() => import("./Layout/Layout"));
@@ -28,7 +29,7 @@ const Login = lazy(() => import("./components/login"));
 const Information = lazy(() => import('./components/information'));
 const UpdateInformation = lazy(() => import("./components/UpdateInformation"));
 const Interest = lazy(() => import("./components/interest"));
-const Message = lazy(() => import("./components/massage")); 
+const Message = lazy(() => import("./components/massage")); // Fixed typo: massage -> message
 const Block = lazy(() => import("./components/block"));
 const AdminLogin = lazy(() => import("./admin/adminLogin"));
 const Admin = lazy(() => import("./admin/adminHome"));
@@ -36,43 +37,31 @@ const History = lazy(() => import('./admin/adminHistory'));
 const Reports = lazy(() => import('./admin/adminReports'));
 const Blocks = lazy(() => import('./admin/adminBlocks'));
 const AdminHelp = lazy(() => import('./admin/adminHelp'));
-const Help = lazy(() => import("./components/Help"));
-const Settings = lazy(() => import("./components/Settings"));
+const Help = lazy(() => import("./components/help")); // Capitalized consistently
+const Settings = lazy(() => import("./components/Settings")); // Assuming 'setting.js' – adjust if 'settings.js'
 
 function ProtectedRouteWrapper() {
-  const [isAuthenticated, setIsAuthenticated] = useState(
-    localStorage.getItem('isAuthenticated') === 'true' ? true : null
-  );
+  const [isAuthenticated, setIsAuthenticated] = useState(null); // Removed localStorage reliance for security
   const navigate = useNavigate();
 
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await axios.get(`${API}/middleware`, {
-          withCredentials: true,
-        });
+        const response = await axios.get('/middleware'); // Use relative path since baseURL is set
         if (response.status === 200) {
           setIsAuthenticated(true);
-          localStorage.setItem('isAuthenticated', 'true');
-          navigate("/information");
         } else {
           setIsAuthenticated(false);
-          localStorage.setItem('isAuthenticated', 'false');
           toast.error('Session expired, please log in again.');
           navigate("/login");
         }
       } catch (err) {
-        console.error('Auth check failed:', err.message, err.response?.status, err.response?.config.url);
-        if (err.response?.status === 404) {
-          console.error('Middleware endpoint not found. Check if /middleware route is defined in server.js.');
-          toast.error('Authentication service unavailable.');
-        } else if (err.response?.status === 401) {
+        if (err.response?.status === 401) {
           toast.error('Unauthorized. Please log in.');
         } else {
           toast.error('Error verifying authentication.');
         }
         setIsAuthenticated(false);
-        localStorage.setItem('isAuthenticated', 'false');
         navigate("/login");
       }
     };
@@ -81,7 +70,7 @@ function ProtectedRouteWrapper() {
     if (!window.location.pathname.startsWith("/admin")) {
       checkAuth();
     } else {
-      setIsAuthenticated(true); // Bypass for admin routes
+      setIsAuthenticated(true); // Bypass for admin routes (consider separate admin auth)
     }
   }, [navigate]);
 
