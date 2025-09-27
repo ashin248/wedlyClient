@@ -37,7 +37,7 @@ const History = lazy(() => import('./admin/adminHistory'));
 const Reports = lazy(() => import('./admin/adminReports'));
 const Blocks = lazy(() => import('./admin/adminBlocks'));
 const AdminHelp = lazy(() => import('./admin/adminHelp'));
-const Help = lazy(() => import("./components/help")); // Capitalized consistently
+const Help = lazy(() => import("./components/Help")); // Capitalized consistently
 const Settings = lazy(() => import("./components/Settings")); // Assuming 'setting.js' – adjust if 'settings.js'
 
 function ProtectedRouteWrapper() {
