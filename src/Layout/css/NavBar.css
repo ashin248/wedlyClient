@@ -1,0 +1,855 @@
+@import url("../../global/css/global.css");
+
+/* Global Styles */
+.bi {
+  color: var(--light-neutral);
+}
+* {
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  text-transform: capitalize;
+  color: var(--text-color);
+}
+
+/* Top Navigation Bar */
+.TopNavBar {
+  background-color: var(--BackgroundColor-1);
+  margin-top: -6px;
+  border-bottom: 1px solid var(--border-color);
+  padding: 5px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-medium);
+}
+
+/* Top Navigation Content */
+.TopNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.LogoImage img {
+  height: 50px;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+.LogoImage img:hover {
+  transform: scale(1.05);
+}
+
+/* Toggle Icon for Mobile */
+.ToggleIcon {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--secondary-color);
+  display: none;
+  transition: var(--transition);
+}
+
+.ToggleIcon:hover {
+  color: var(--secondary-hover);
+}
+
+/* Top Navigation Links */
+.TopLinkList {
+  display: flex;
+  align-items: center;
+}
+
+.TopLinkUl {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  align-items: center;
+}
+
+.TopLiNavBar {
+  margin: 0 20px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  transition: var(--transition);
+  padding: 5px;
+}
+
+.TopLiNavBar a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  transition: var(--transition);
+}
+
+.TopLiNavBar a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.TopLiNavBar[style*="color:red"] a {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.TopLiNavBar[style*="color:red"] a:hover {
+  color: var(--secondary-hover);
+}
+
+/* Logout Button */
+.Logout {
+  background: var(--primary-color);
+  color: var(--light-text);
+  border: none;
+  padding: var(--padding-medium);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.Logout:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Search Section */
+.searchSection form {
+  display: flex;
+  align-items: center;
+}
+
+.searchSection input {
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px 0 0 5px;
+  background: var(--BackgroundColor-1);
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+  transition: var(--transition);
+}
+
+.searchSection input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-light);
+}
+
+.searchSection button {
+  padding: 8px 12px;
+  background: var(--primary-color);
+  color: var(--light-text);
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.searchSection button:hover {
+  background: var(--primary-hover);
+}
+
+/* Bottom Navigation Bar */
+.BottomNavBar {
+  background-color: var(--BackgroundColor-1);
+  border-top: 1px solid var(--border-color);
+  padding: 5px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-medium);
+}
+
+/* Bottom Navigation Content */
+.BottomNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Profile Image Section */
+.profileImageSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profileImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--secondary-color);
+  transition: var(--transition);
+}
+
+.profileImg:hover {
+  transform: scale(1.05);
+}
+
+.userName {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+
+.notification {
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  color: var(--secondary-color);
+}
+
+/* Bottom Links */
+.BottomLink {
+  display: flex;
+  align-items: center;
+}
+
+.BottomLinkUl {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+}
+
+.BottomLinkLi {
+  margin: 0 15px;
+  position: relative;
+  transition: var(--transition);
+}
+
+.BottomLinkLi a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  transition: var(--transition);
+}
+
+.BottomLinkLi a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Count Badge */
+.count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: var(--error-color);
+  color: var(--light-text);
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Bottom Navigation Options */
+.BottomNavOptions {
+  position: relative;
+}
+
+.BottomNavOptions i {
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--secondary-color);
+  transition: var(--transition);
+}
+
+.BottomNavOptions i:hover {
+  color: var(--secondary-hover);
+}
+
+/* Bottom Select Menu */
+.BottomSelect {
+  position: absolute;
+  bottom: 60px;
+  right: 10px;
+  background: var(--BackgroundColor-1);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-medium);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.BottomSelect a {
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 8px 16px;
+  transition: var(--transition);
+}
+
+.BottomSelect a:hover {
+  background: var(--alt-background);
+  color: var(--primary-color);
+}
+
+/* Outlet Padding */
+.outlet {
+  padding: 15px;
+  margin: 70px auto 70px auto;
+}
+
+/* Responsive Adjustments */
+
+/* Smartwatches (280px and below) */
+@media screen and (max-width: 280px) {
+  .TopNavBar, .BottomNavBar {
+    padding: calc(var(--padding-small) * 0.5);
+  }
+  .LogoImage img {
+    height: 30px;
+  }
+  .ToggleIcon {
+    font-size: 1.2rem;
+    display: block;
+  }
+  .TopLinkList, .BottomLink {
+    display: none;
+  }
+  .TopLinkList.open, .BottomLink.open {
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    background: var(--BackgroundColor-1);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    top: 50px;
+  }
+  .TopLinkUl, .BottomLinkUl {
+    flex-direction: column;
+  }
+  .TopLiNavBar, .BottomLinkLi {
+    margin: 5px 0;
+  }
+  .TopLiNavBar a, .BottomLinkLi a {
+    font-size: calc(var(--font-size-base) * 0.7);
+  }
+  .Logout {
+    padding: calc(var(--padding-medium) * 0.5);
+    font-size: calc(var(--font-size-base) * 0.7);
+  }
+  .searchSection input {
+    padding: 4px;
+    font-size: calc(var(--font-size-base) * 0.7);
+  }
+  .searchSection button {
+    padding: 4px 6px;
+  }
+  .profileImg {
+    width: 25px;
+    height: 25px;
+  }
+  .userName {
+    font-size: calc(var(--font-size-base) * 0.7);
+  }
+  .notification {
+    font-size: 0.8rem;
+  }
+  .count {
+    font-size: 0.6rem;
+    padding: 1px 3px;
+  }
+  .BottomNavOptions i {
+    font-size: 1rem;
+  }
+  .BottomSelect {
+    bottom: 40px;
+    right: 5px;
+    padding: 5px;
+  }
+  .BottomSelect a {
+    padding: 4px 8px;
+    font-size: calc(var(--font-size-base) * 0.7);
+  }
+  .outlet {
+    padding: 8px;
+    margin: 45px auto 45px auto;
+  }
+}
+
+/* Small Mobile Devices (320x606 to 424px) */
+@media screen and (max-width: 424px) {
+  .TopNavBar, .BottomNavBar {
+    padding: calc(var(--padding-small) * 0.8);
+  }
+  .LogoImage img {
+    height: 40px;
+  }
+  .ToggleIcon {
+    font-size: 1.5rem;
+    display: block;
+  }
+  .TopLinkList, .BottomLink {
+    display: none;
+  }
+  .TopLinkList.open, .BottomLink.open {
+    display: block;
+    position: absolute;
+    background: var(--BackgroundColor-1);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    top: 30px;
+    right: 30px;
+  }
+  .TopLinkUl, .BottomLinkUl {
+    flex-direction: column;
+  }
+  .TopLiNavBar, .BottomLinkLi {
+    margin: 8px 0;
+  }
+  .TopLiNavBar a, .BottomLinkLi a {
+    font-size: calc(var(--font-size-base) * 0.8);
+  }
+  .Logout {
+    padding: calc(var(--padding-medium) * 0.8);
+    font-size: calc(var(--font-size-base) * 0.8);
+  }
+  .searchSection input {
+    padding: 6px;
+    font-size: calc(var(--font-size-base) * 0.8);
+  }
+  .searchSection button {
+    padding: 6px 9px;
+  }
+  .profileImg {
+    width: 30px;
+    height: 30px;
+  }
+  .userName {
+    font-size: calc(var(--font-size-base) * 0.8);
+  }
+  .notification {
+    font-size: 1rem;
+  }
+  .count {
+    font-size: 0.7rem;
+    padding: 1px 4px;
+  }
+  .BottomNavOptions i {
+    font-size: 1.2rem;
+  }
+  .BottomSelect {
+    bottom: 50px;
+    right: 10px;
+    padding: 8px;
+  }
+  .BottomSelect a {
+    padding: 6px 12px;
+    font-size: calc(var(--font-size-base) * 0.8);
+  }
+  .outlet {
+    padding: 10px;
+    margin: 55px auto 55px auto;
+  }
+}
+
+/* Mobile Devices (425x606 to 767px) */
+@media screen and (min-width: 425px) and (max-width: 767px) {
+  .TopNavBar, .BottomNavBar {
+    padding: var(--padding-small);
+  }
+  .LogoImage img {
+    height: 45px;
+  }
+  .ToggleIcon {
+    font-size: 1.6rem;
+    display: block;
+  }
+  .TopLinkList, .BottomLink {
+    display: none;
+  }
+  .TopLinkList.open, .BottomLink.open {
+    display: block;
+    position: absolute;
+    background: var(--BackgroundColor-1);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    top: 30px;
+    right: 30px;
+  }
+  .TopLinkUl, .BottomLinkUl {
+    flex-direction: column;
+  }
+  .TopLiNavBar, .BottomLinkLi {
+    margin: 10px 0;
+  }
+  .TopLiNavBar a, .BottomLinkLi a {
+    font-size: calc(var(--font-size-base) * 0.9);
+  }
+  .Logout {
+    padding: calc(var(--padding-medium) * 0.9);
+    font-size: calc(var(--font-size-base) * 0.9);
+  }
+  .searchSection input {
+    padding: 7px;
+    font-size: calc(var(--font-size-base) * 0.9);
+  }
+  .searchSection button {
+    padding: 7px 11px;
+  }
+  .profileImg {
+    width: 35px;
+    height: 35px;
+  }
+  .userName {
+    font-size: calc(var(--font-size-base) * 0.9);
+  }
+  .notification {
+    font-size: 1.1rem;
+  }
+  .count {
+    font-size: 0.8rem;
+    padding: 2px 5px;
+  }
+  .BottomNavOptions i {
+    font-size: 1.3rem;
+  }
+  .BottomSelect {
+    bottom: 60px;
+    right: 15px;
+    padding: 10px;
+  }
+  .BottomSelect a {
+    padding: 7px 14px;
+    font-size: calc(var(--font-size-base) * 0.9);
+  }
+  .outlet {
+    padding: 12px;
+    margin: 65px auto 65px auto;
+  }
+}
+
+/* Tablets (768x606 to 1439px) */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .TopNavBar, .BottomNavBar {
+    padding: calc(var(--padding-small) * 1.2);
+  }
+  .LogoImage img {
+    height: 50px;
+  }
+  .ToggleIcon {
+    display: none;
+  }
+  .TopLinkList, .BottomLink {
+    display: flex;
+  }
+  .TopLinkUl, .BottomLinkUl {
+    flex-direction: row;
+  }
+  .TopLiNavBar, .BottomLinkLi {
+    margin: 0 15px;
+  }
+  .TopLiNavBar a, .BottomLinkLi a {
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+  }
+  .Logout {
+    padding: 8px 16px;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+  }
+  .searchSection input {
+    padding: 8px;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+  }
+  .searchSection button {
+    padding: 8px 12px;
+  }
+  .profileImg {
+    width: 38px;
+    height: 38px;
+  }
+  .userName {
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+  }
+  .notification {
+    font-size: clamp(1.15rem, 2vw, 1.25rem);
+  }
+  .count {
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+  }
+  .BottomNavOptions i {
+    font-size: clamp(1.4rem, 2vw, 1.5rem);
+  }
+  .BottomSelect {
+    bottom: 65px;
+    right: 15px;
+    padding: 12px;
+  }
+  .BottomSelect a {
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+  }
+  .outlet {
+    padding: 15px;
+    margin: 70px auto 70px auto;
+  }
+}
+
+/* Laptops/Desktops (1025px–1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .TopNavBar, .BottomNavBar {
+    padding: 7px;
+  }
+  .TopNav, .BottomNav {
+    flex-direction: row;
+    align-items: center;
+  }
+  .LogoImage img {
+    height: 55px;
+  }
+  .ToggleIcon {
+    display: none;
+  }
+  .TopLinkList, .BottomLink {
+    display: flex;
+  }
+  .TopLinkUl, .BottomLinkUl {
+    flex-direction: row;
+  }
+  .TopLiNavBar, .BottomLinkLi {
+    margin: 0 18px;
+  }
+  .TopLiNavBar a, .BottomLinkLi a {
+    font-size: clamp(1.05rem, 2vw, 1.15rem);
+  }
+  .Logout {
+    padding: 9px 18px;
+    font-size: clamp(1.05rem, 2vw, 1.15rem);
+  }
+  .searchSection input {
+    padding: 9px;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+  }
+  .searchSection button {
+    padding: 9px 14px;
+  }
+  .profileImg {
+    width: 42px;
+    height: 42px;
+  }
+  .userName {
+    font-size: clamp(1.05rem, 2vw, 1.15rem);
+  }
+  .notification {
+    font-size: clamp(1.25rem, 2vw, 1.35rem);
+  }
+  .count {
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+  }
+  .BottomNavOptions i {
+    font-size: clamp(1.5rem, 2vw, 1.7rem);
+  }
+  .BottomSelect {
+    bottom: 70px;
+    right: 20px;
+    padding: 14px;
+  }
+  .BottomSelect a {
+    font-size: clamp(1.05rem, 2vw, 1.15rem);
+  }
+  .outlet {
+    padding: 20px;
+    margin: 80px auto 80px auto;
+  }
+}
+
+/* PC and Laptop Screens (1440x751 to 2559px) */
+@media screen and (min-width: 1440px) and (max-width: 2559px) {
+  .TopNavBar, .BottomNavBar {
+    padding: calc(var(--padding-small) * 1.2);
+  }
+  .LogoImage img {
+    height: 55px;
+  }
+  .ToggleIcon {
+    display: none;
+  }
+  .TopLiNavBar {
+    margin: 0 18px;
+  }
+  .TopLiNavBar a {
+    font-size: calc(var(--font-size-base) * 1.1);
+  }
+  .Logout {
+    padding: calc(var(--padding-medium) * 1.2);
+    font-size: calc(var(--font-size-base) * 1.1);
+  }
+  .searchSection input {
+    padding: 9px;
+    font-size: calc(var(--font-size-base) * 1.1);
+  }
+  .searchSection button {
+    padding: 9px 14px;
+  }
+  .profileImg {
+    width: 42px;
+    height: 42px;
+  }
+  .userName {
+    font-size: calc(var(--font-size-base) * 1.1);
+  }
+  .notification {
+    font-size: 1.3rem;
+  }
+  .count {
+    font-size: 0.95rem;
+  }
+  .BottomNavOptions i {
+    font-size: 1.6rem;
+  }
+  .BottomSelect {
+    bottom: 70px;
+    padding: 14px;
+  }
+  .BottomSelect a {
+    font-size: calc(var(--font-size-base) * 1.1);
+  }
+  .outlet {
+    padding: 20px;
+    margin: 80px auto 80px auto;
+  }
+}
+
+/* Large Desktops (≥1441px) */
+@media (min-width: 1441px) {
+  .TopNavBar, .BottomNavBar {
+    padding: 8px;
+  }
+  .TopNav, .BottomNav {
+    flex-direction: row;
+    align-items: center;
+  }
+  .LogoImage img {
+    height: 60px;
+  }
+  .ToggleIcon {
+    display: none;
+  }
+  .TopLinkList, .BottomLink {
+    display: flex;
+  }
+  .TopLinkUl, .BottomLinkUl {
+    flex-direction: row;
+  }
+  .TopLiNavBar, .BottomLinkLi {
+    margin: 0 20px;
+  }
+  .TopLiNavBar a, .BottomLinkLi a {
+    font-size: clamp(1.1rem, 2vw, 1.2rem);
+  }
+  .Logout {
+    padding: 10px 20px;
+    font-size: clamp(1.1rem, 2vw, 1.2rem);
+  }
+  .searchSection input {
+    padding: 10px;
+    font-size: clamp(1.1rem, 2vw, 1.2rem);
+  }
+  .searchSection button {
+    padding: 10px 16px;
+  }
+  .profileImg {
+    width: 45px;
+    height: 45px;
+  }
+  .userName {
+    font-size: clamp(1.1rem, 2vw, 1.2rem);
+  }
+  .notification {
+    font-size: clamp(1.3rem, 2vw, 1.4rem);
+  }
+  .count {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+  }
+  .BottomNavOptions i {
+    font-size: clamp(1.6rem, 2vw, 1.8rem);
+  }
+  .BottomSelect {
+    bottom: 80px;
+    right: 20px;
+    padding: 15px;
+  }
+  .BottomSelect a {
+    font-size: clamp(1.1rem, 2vw, 1.2rem);
+  }
+  .outlet {
+    padding: 25px;
+    margin: 90px auto 90px auto;
+  }
+}
+
+/* Large PC Screens (2560x1351 and above) */
+@media screen and (min-width: 2560px) {
+  .TopNavBar, .BottomNavBar {
+    padding: calc(var(--padding-small) * 1.5);
+  }
+  .LogoImage img {
+    height: 65px;
+  }
+  .TopLiNavBar {
+    margin: 0 25px;
+  }
+  .TopLiNavBar a {
+    font-size: calc(var(--font-size-base) * 1.2);
+  }
+  .Logout {
+    padding: calc(var(--padding-medium) * 1.5);
+    font-size: calc(var(--font-size-base) * 1.2);
+  }
+  .searchSection input {
+    padding: 11px;
+    font-size: calc(var(--font-size-base) * 1.2);
+  }
+  .searchSection button {
+    padding: 11px 18px;
+  }
+  .profileImg {
+    width: 50px;
+    height: 50px;
+  }
+  .userName {
+    font-size: calc(var(--font-size-base) * 1.2);
+  }
+  .notification {
+    font-size: 1.5rem;
+  }
+  .count {
+    font-size: 1.1rem;
+  }
+  .BottomNavOptions i {
+    font-size: 1.8rem;
+  }
+  .BottomSelect {
+    bottom: 90px;
+    padding: 18px;
+  }
+  .BottomSelect a {
+    font-size: calc(var(--font-size-base) * 1.2);
+  }
+  .outlet {
+    padding: 30px;
+    margin: 100px auto 100px auto;
+  }
+}

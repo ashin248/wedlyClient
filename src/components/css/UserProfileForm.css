@@ -1,0 +1,482 @@
+@import url('../../global/css/global.css');
+
+
+
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  font-family: var(--font-family); /* Roboto, Inter from global.css */
+  color: var(--text-color); /* Using text color from global.css */
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container */
+.matrimony-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--BackgroundColor-1); /* Soft white from global.css */
+  width: 100%;
+  min-height: 100vh;
+  padding: var(--padding-large); /* 1.5rem */
+  gap: var(--margin-large); /* 1.5rem */
+  margin: 70px auto 70px auto; /* Adjusted for TopNavBar and BottomNavBar */
+  overflow-y: auto;
+}
+
+/* Form styling */
+.matrimony-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: var(--max_width_800); /* 800px from global.css */
+  gap: var(--margin-large); /* 1.5rem */
+  background: var(--BackgroundColor-2); /* Light gray from global.css */
+  padding: var(--padding-large); /* 1.5rem */
+  border-radius: var(--border-radius); /* 8px */
+  box-shadow: var(--shadow-medium); /* Card shadow from global.css */
+}
+
+/* Form section */
+.matrimony-form-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-medium); /* 1rem */
+  padding: var(--padding-medium); /* 0.75rem */
+}
+
+/* Form section heading */
+.matrimony-form-section h2 {
+  font-size: var(--font-size-h2); /* 1.75rem */
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+/* Form group */
+.matrimony-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-small); /* 0.5rem */
+}
+
+/* Input, select, and textarea */
+.matrimony-form-input,
+.matrimony-form-select,
+.matrimony-form-textarea {
+  padding: var(--padding-small); /* 0.5rem */
+  font-size: var(--font-size-base); /* 1rem */
+  border: 1px solid var(--border-color); /* From global.css */
+  border-radius: var(--border-radius); /* 8px */
+  background: var(--alt-background); /* Light background from global.css */
+  color: var(--text-color);
+  text-transform: capitalize;
+}
+
+.matrimony-form-input:focus,
+.matrimony-form-select:focus,
+.matrimony-form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-light);
+}
+
+.matrimony-form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Alert and error messages */
+.matrimony-alert {
+  display: flex;
+  justify-content: center;
+  padding: var(--padding-small); /* 0.5rem */
+  border-radius: var(--border-radius); /* 8px */
+  font-size: var(--font-size-base); /* 1rem */
+  width: 100%;
+  background: var(--success-color); /* Green for success messages */
+  color: var(--light-text); /* White from global.css */
+  box-shadow: var(--shadow-light);
+}
+
+.matrimony-error {
+  background: var(--error-color); /* Red from global.css */
+  color: var(--light-text);
+  font-size: var(--font-size-small); /* 0.875rem */
+  padding: var(--padding-small); /* 0.5rem */
+  border-radius: var(--border-radius);
+}
+
+/* Loading message */
+.matrimony-loading {
+  color: var(--text-color);
+  font-size: var(--font-size-base); /* 1rem */
+  text-align: center;
+  animation: pulse 1.5s infinite;
+}
+
+/* Submit button */
+.matrimony-form-submit {
+  background: var(--primary-color); /* From global.css */
+  color: var(--light-text);
+  font-size: var(--font-size-base); /* 1rem */
+  padding: var(--padding-medium); /* 0.75rem */
+  border: none;
+  border-radius: var(--border-radius); /* 8px */
+  cursor: pointer;
+  box-shadow: var(--shadow-light);
+  transition: var(--transition); /* 0.3s ease from global.css */
+  width: 100%;
+  max-width: 200px;
+  align-self: center;
+}
+
+.matrimony-form-submit:hover:not(:disabled) {
+  background: var(--primary-hover); /* Darker primary color */
+  box-shadow: var(--shadow-hover);
+  transform: scale(1.05);
+}
+
+.matrimony-form-submit:disabled {
+  background: var(--dark-neutral); /* Softer dark gray */
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* HR divider */
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--dark-neutral);
+  opacity: 0.5;
+  width: 100%;
+}
+
+/* Animation for loading */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Responsive Adjustments */
+
+/* Smartwatches (≤280px) */
+@media screen and (max-width: 280px) {
+  .matrimony-container {
+    padding: calc(var(--padding-small) * 0.5);
+    margin: 45px auto 45px auto;
+    gap: calc(var(--margin-small) * 0.5);
+  }
+  .matrimony-form {
+    padding: calc(var(--padding-small) * 0.5);
+    gap: calc(var(--margin-small) * 0.5);
+    max-width: 100%;
+  }
+  .matrimony-form-section {
+    padding: calc(var(--padding-small) * 0.5);
+    gap: calc(var(--gap-small) * 0.5);
+  }
+  .matrimony-form-section h2 {
+    font-size: calc(var(--font-size-h2) * 0.7);
+  }
+  .matrimony-form-group {
+    gap: calc(var(--gap-small) * 0.5);
+  }
+  .matrimony-form-input,
+  .matrimony-form-select,
+  .matrimony-form-textarea {
+    font-size: calc(var(--font-size-base) * 0.7);
+    padding: calc(var(--padding-small) * 0.5);
+  }
+  .matrimony-form-textarea {
+    min-height: 60px;
+  }
+  .matrimony-alert {
+    font-size: calc(var(--font-size-base) * 0.7);
+    padding: calc(var(--padding-small) * 0.5);
+  }
+  .matrimony-error {
+    font-size: calc(var(--font-size-small) * 0.7);
+    padding: calc(var(--padding-small) * 0.5);
+  }
+  .matrimony-loading {
+    font-size: calc(var(--font-size-base) * 0.7);
+  }
+  .matrimony-form-submit {
+    font-size: calc(var(--font-size-base) * 0.7);
+    padding: calc(var(--padding-medium) * 0.5);
+    max-width: 120px;
+  }
+}
+
+/* Small Mobile Devices (320x606 to 424px) */
+@media screen and (max-width: 424px) {
+  .matrimony-container {
+    padding: calc(var(--padding-small) * 0.8);
+    margin: 55px auto 55px auto;
+    gap: calc(var(--margin-medium) * 0.8);
+  }
+  .matrimony-form {
+    padding: calc(var(--padding-small) * 0.8);
+    gap: calc(var(--margin-medium) * 0.8);
+    max-width: 100%;
+  }
+  .matrimony-form-section {
+    padding: calc(var(--padding-medium) * 0.8);
+    gap: calc(var(--gap-small) * 0.8);
+  }
+  .matrimony-form-section h2 {
+    font-size: calc(var(--font-size-h2) * 0.8);
+  }
+  .matrimony-form-group {
+    gap: calc(var(--gap-small) * 0.8);
+  }
+  .matrimony-form-input,
+  .matrimony-form-select,
+  .matrimony-form-textarea {
+    font-size: calc(var(--font-size-base) * 0.8);
+    padding: calc(var(--padding-small) * 0.8);
+  }
+  .matrimony-form-textarea {
+    min-height: 80px;
+  }
+  .matrimony-alert {
+    font-size: calc(var(--font-size-base) * 0.8);
+    padding: calc(var(--padding-small) * 0.8);
+  }
+  .matrimony-error {
+    font-size: calc(var(--font-size-small) * 0.8);
+    padding: calc(var(--padding-small) * 0.8);
+  }
+  .matrimony-loading {
+    font-size: calc(var(--font-size-base) * 0.8);
+  }
+  .matrimony-form-submit {
+    font-size: calc(var(--font-size-base) * 0.8);
+    padding: calc(var(--padding-medium) * 0.8);
+    max-width: 150px;
+  }
+}
+
+/* Mobile Devices (425x606 to 767px) */
+@media screen and (min-width: 425px) and (max-width: 767px) {
+  .matrimony-container {
+    padding: var(--padding-medium);
+    margin: 65px auto 65px auto;
+    gap: var(--margin-medium);
+  }
+  .matrimony-form {
+    padding: var(--padding-medium);
+    gap: var(--margin-medium);
+    max-width: 90%;
+  }
+  .matrimony-form-section {
+    padding: var(--padding-medium);
+    gap: var(--gap-small);
+  }
+  .matrimony-form-section h2 {
+    font-size: calc(var(--font-size-h2) * 0.9);
+  }
+  .matrimony-form-group {
+    gap: var(--gap-small);
+  }
+  .matrimony-form-input,
+  .matrimony-form-select,
+  .matrimony-form-textarea {
+    font-size: calc(var(--font-size-base) * 0.9);
+    padding: var(--padding-small);
+  }
+  .matrimony-form-textarea {
+    min-height: 90px;
+  }
+  .matrimony-alert {
+    font-size: calc(var(--font-size-base) * 0.9);
+  }
+  .matrimony-error {
+    font-size: calc(var(--font-size-small) * 0.9);
+  }
+  .matrimony-loading {
+    font-size: calc(var(--font-size-base) * 0.9);
+  }
+  .matrimony-form-submit {
+    font-size: calc(var(--font-size-base) * 0.9);
+    padding: var(--padding-medium);
+    max-width: 180px;
+  }
+}
+
+/* Tablets (768x606 to 1439px) */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .matrimony-container {
+    padding: calc(var(--padding-large) * 0.8);
+    margin: 70px auto 70px auto;
+    gap: calc(var(--margin-large) * 0.8);
+  }
+  .matrimony-form {
+    padding: calc(var(--padding-large) * 0.8);
+    gap: calc(var(--margin-large) * 0.8);
+    max-width: var(--max_width_800);
+  }
+  .matrimony-form-section {
+    padding: calc(var(--padding-medium) * 0.8);
+    gap: calc(var(--gap-medium) * 0.8);
+  }
+  .matrimony-form-section h2 {
+    font-size: var(--font-size-h2);
+  }
+  .matrimony-form-group {
+    gap: var(--gap-medium);
+  }
+  .matrimony-form-input,
+  .matrimony-form-select,
+  .matrimony-form-textarea {
+    font-size: var(--font-size-base);
+    padding: calc(var(--padding-small) * 0.8);
+  }
+  .matrimony-form-textarea {
+    min-height: 100px;
+  }
+  .matrimony-alert {
+    font-size: var(--font-size-base);
+  }
+  .matrimony-error {
+    font-size: var(--font-size-small);
+  }
+  .matrimony-loading {
+    font-size: var(--font-size-base);
+  }
+  .matrimony-form-submit {
+    font-size: var(--font-size-base);
+    padding: calc(var(--padding-medium) * 0.8);
+  }
+}
+
+/* Laptops/Desktops (1025px–1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .matrimony-container {
+    padding: var(--padding-large);
+    margin: 80px auto 80px auto;
+    gap: var(--margin-large);
+  }
+  .matrimony-form {
+    padding: var(--padding-large);
+    gap: var(--margin-large);
+  }
+  .matrimony-form-section {
+    padding: var(--padding-medium);
+    gap: var(--gap-medium);
+  }
+  .matrimony-form-section h2 {
+    font-size: calc(var(--font-size-h2) * 1.1);
+  }
+  .matrimony-form-group {
+    gap: var(--gap-medium);
+  }
+  .matrimony-form-input,
+  .matrimony-form-select,
+  .matrimony-form-textarea {
+    font-size: calc(var(--font-size-base) * 1.1);
+    padding: var(--padding-small);
+  }
+  .matrimony-alert {
+    font-size: calc(var(--font-size-base) * 1.1);
+  }
+  .matrimony-error {
+    font-size: calc(var(--font-size-small) * 1.1);
+  }
+  .matrimony-loading {
+    font-size: calc(var(--font-size-base) * 1.1);
+  }
+  .matrimony-form-submit {
+    font-size: calc(var(--font-size-base) * 1.1);
+    padding: var(--padding-medium);
+  }
+}
+
+/* PC and Laptop Screens (1440x751 to 2559px) */
+@media screen and (min-width: 1440px) and (max-width: 2559px) {
+  .matrimony-container {
+    padding: calc(var(--padding-large) * 1.2);
+    margin: 80px auto 80px auto;
+    gap: calc(var(--margin-large) * 1.2);
+  }
+  .matrimony-form {
+    padding: calc(var(--padding-large) * 1.2);
+    gap: calc(var(--margin-large) * 1.2);
+  }
+  .matrimony-form-section {
+    padding: calc(var(--padding-medium) * 1.2);
+    gap: calc(var(--gap-medium) * 1.2);
+  }
+  .matrimony-form-section h2 {
+    font-size: calc(var(--font-size-h2) * 1.2);
+  }
+  .matrimony-form-group {
+    gap: calc(var(--gap-medium) * 1.2);
+  }
+  .matrimony-form-input,
+  .matrimony-form-select,
+  .matrimony-form-textarea {
+    font-size: calc(var(--font-size-base) * 1.2);
+    padding: calc(var(--padding-small) * 1.2);
+  }
+  .matrimony-alert {
+    font-size: calc(var(--font-size-base) * 1.2);
+  }
+  .matrimony-error {
+    font-size: calc(var(--font-size-small) * 1.2);
+  }
+  .matrimony-loading {
+    font-size: calc(var(--font-size-base) * 1.2);
+  }
+  .matrimony-form-submit {
+    font-size: calc(var(--font-size-base) * 1.2);
+    padding: calc(var(--padding-medium) * 1.2);
+    max-width: 220px;
+  }
+}
+
+/* Large PC Screens (≥2560px) */
+@media screen and (min-width: 2560px) {
+  .matrimony-container {
+    padding: calc(var(--padding-large) * 1.5);
+    margin: 100px auto 100px auto;
+    gap: calc(var(--margin-large) * 1.5);
+  }
+  .matrimony-form {
+    padding: calc(var(--padding-large) * 1.5);
+    gap: calc(var(--margin-large) * 1.5);
+    max-width: var(--max_width_1000); /* 1000px for larger screens */
+  }
+  .matrimony-form-section {
+    padding: calc(var(--padding-medium) * 1.5);
+    gap: calc(var(--gap-medium) * 1.5);
+  }
+  .matrimony-form-section h2 {
+    font-size: calc(var(--font-size-h2) * 1.3);
+  }
+  .matrimony-form-group {
+    gap: calc(var(--gap-medium) * 1.5);
+  }
+  .matrimony-form-input,
+  .matrimony-form-select,
+  .matrimony-form-textarea {
+    font-size: calc(var(--font-size-base) * 1.3);
+    padding: calc(var(--padding-small) * 1.5);
+  }
+  .matrimony-alert {
+    font-size: calc(var(--font-size-base) * 1.3);
+  }
+  .matrimony-error {
+    font-size: calc(var(--font-size-small) * 1.3);
+  }
+  .matrimony-loading {
+    font-size: calc(var(--font-size-base) * 1.3);
+  }
+  .matrimony-form-submit {
+    font-size: calc(var(--font-size-base) * 1.3);
+    padding: calc(var(--padding-medium) * 1.5);
+    max-width: 250px;
+  }
+}

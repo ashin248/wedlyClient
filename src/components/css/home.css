@@ -1,0 +1,267 @@
+@import url('../../global/css/global.css');
+
+
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  text-transform: capitalize;
+  color: var(--text-color);
+}
+
+.homePage {
+  width: 100%;
+  min-height: 100vh;
+  padding: 10px;
+  background-color: var(--BackgroundColor-1);
+  padding-top: 110px;
+}
+
+.filterSection {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  width: 100%;
+  background-color: var(--filterSectionBackground);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow-medium);
+  min-height: 60px;
+}
+
+.filter-toggle-button {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  color: #e74c3c;
+  padding: var(--padding-medium);
+  font-size: var(--font-size-base);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-light);
+  margin-bottom: 0px;
+  z-index: 1001;
+  width: 300px;
+}
+
+.filter-toggle-button:hover,
+.filter-toggle-button.expanded {
+  background-color: var(--primary-hover);
+  box-shadow: var(--shadow-hover);
+  width: 300px;
+}
+
+.filter-form {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--filterSectionForm);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-medium);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+  max-height: 400px;
+  transform-origin: top;
+  transition: transform 0.3s ease, opacity 0.3s ease, height 0.3s ease;
+}
+
+.filter-form:not(.show) {
+  transform: scaleY(0);
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.filter-form.show {
+  transform: scaleY(1);
+  opacity: 1;
+  height: auto;
+}
+
+.filterSection h2 {
+  color: var(--secondary-color);
+  font-size: var(--font-size-h2);
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.labelStyle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--text-color);
+}
+
+.labelStyle input,
+.labelStyle select {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--alt-background);
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+  transition: var(--transition);
+}
+
+.labelStyle input:focus,
+.labelStyle select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-light);
+}
+
+.btnFilter {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  padding: var(--padding-medium);
+  font-size: var(--font-size-base);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-light);
+}
+
+.btnFilter:hover {
+  background-color: var(--primary-hover);
+  box-shadow: var(--shadow-hover);
+  transition: all 0.5s ease-in-out;
+}
+
+.btn-interested {
+  background-color: var(--neutral-color);
+  cursor: not-allowed;
+  color: var(--light-text);
+}
+
+.btn-interested:hover {
+  background-color: var(--dark-neutral);
+  box-shadow: var(--shadow-light);
+}
+
+.loading,
+.error {
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+  text-align: center;
+  padding: 20px;
+  background-color: var(--BackgroundColor-1);
+}
+
+.userBody {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 20px;
+  background-color: var(--BackgroundColor-1);
+}
+
+#idDetails\&Image {
+  box-shadow: var(--shadow-light);
+  color: var(--text-color);
+}
+#idDetails\&Image:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+#idInterested {
+  box-shadow: var(--shadow-light);
+  color: var(--text-color);
+}
+#idInterested:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.userBodyCard {
+  background-color: var(--background-color);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--BackgroundColorShadow-1);
+  transform-style: preserve-3d;
+  transition: var(--transition);
+  perspective: 1000px;
+  position: relative;
+}
+
+/* Enhanced hover effect for user cards */
+.userBodyCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--BackgroundColorShadow-2);
+  backdrop-filter: blur(5px);
+}
+
+.userBodyCard.flipped .card-front {
+  display: none;
+}
+
+.userBodyCard.flipped .card-back {
+  display: block;
+}
+
+.card-front,
+.card-back {
+  padding: 1rem;
+}
+
+.card-back {
+  display: none;
+  background-color: var(--alt-background);
+}
+
+.UserBodyBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.userImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 0.5rem;
+  border: 2px solid var(--secondary-color);
+}
+
+.userInfo {
+  text-align: left;
+  padding-top: 1rem;
+}
+
+.userInfo p {
+  margin: 0.3rem 0;
+  color: var(--text-color);
+}
+
+.frontName {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  font-family: cursive;
+}
+
+.btnSection {
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+/* Responsive Adjustments */

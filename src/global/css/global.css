@@ -1,0 +1,160 @@
+:root {
+  /* Font Family */
+  --font-family: 'Poppins', 'Segoe UI', sans-serif;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem; 
+  --font-size-small: 0.875rem;
+  --font-size-base: 1rem; 
+  --font-size-medium: 1.125rem; 
+  --font-size-h4: 1.25rem;
+  --font-size-h3: 1.5rem; 
+  --font-size-h2: 1.75rem;
+  --font-size-h1: 2.5rem;
+
+  /* New Font Sizes for Accessibility */
+  --font-size-xl: 3rem; 
+  --font-size-accessible: 1.125rem; 
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+
+  /* New Font Weights */
+  --font-weight-extra-bold: 700; 
+  --font-weight-black: 900;
+
+  /* Colors - Dark Mode */
+  --BackgroundColor-1: #1a202c; /* Dark charcoal background */
+  --BackgroundColor-2: #2d3748; /* Slightly lighter gray for sections */
+  --alt-background: #1f2937; /* Very dark blue for components */
+  --primary-color: #63b3ed; /* A bright, vibrant blue */
+  --primary-hover: #4299e1; /* Darker blue for hover state */
+  --secondary-color: #a0aec0; /* Light gray for secondary elements */
+  --secondary-hover: #cbd5e0; 
+  --accent-color: #f6ad55; /* A warm orange for accent */
+  --success-color: #48bb78;
+  --success-hover: #38a169; 
+  --error-color: #fc8181;
+  --error-bg: #443333;
+  --success-bg: #2d3748; 
+  --neutral-color: #faf637; 
+  --text-color: #e2e8f0; /* Off-white text for contrast */
+  --light-text: #ffffff; 
+  --muted-text: #718096;
+  --border-color: #4a5568;
+  --heading-1: #e2e8f0; /* Same as text for headings */
+  --paragraph-2: #cbd5e0;
+  --link: #63b3ed;
+  --LinkBi: #63b3ed;
+  --light-neutral: #4a5568;
+  --h4-color: #e2e8f0; 
+  --UserItem: #2d3748; 
+  --filterSectionBackground: rgb(26 32 44 / 54%);
+  --filterSectionForm: #1f2937; 
+  --playful-btn-background: #f6ad55;
+
+  /* New Colors for Accessibility and Contrast */
+  --high-contrast-text: #ffffff;
+  --warning-color: #f6e05e; 
+  --warning-hover: #ecc94b; 
+  --warning-bg: #4a412a; 
+  --disabled-color: #4a5568; 
+  --disabled-bg: #2d3748; 
+
+  /* Shadows */
+  --shadow-light: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-medium: 0 2px 4px rgba(0, 0, 0, 0.25);
+  --shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --BackgroundColorShadow-1: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --heading-1-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  /* New Shadows */
+  --shadow-dark: 0 6px 12px rgba(0, 0, 0, 0.4);
+  --shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+
+  /* Spacing */
+  --padding-small: 0.5rem;
+  --padding-medium: 0.75rem; 
+  --padding-large: 1.5rem;
+  --padding_5: 5px;
+  --margin-small: 0.5rem;
+  --margin-medium: 0.75rem; 
+  --margin-large: 1.5rem;
+  --gap-small: 0.5rem;
+  --gap-medium: 1rem; 
+  --gap-large: 1.5rem;
+  --marin_bottom_140: 140px;
+
+  /* New Spacing */
+  --padding-xl: 2rem;
+  --margin-xl: 2rem; 
+  --gap-xl: 2rem; 
+
+  /* Widths and Heights */
+  --width_100_percentage: 100%;
+  --max_width_600: 600px;
+  --max_width_800: 800px;
+  --max_width_900: 900px;
+  --max_width_1200: 1200px;
+  --max_width_1280: 1280px;
+  --max_with_450: 450px;
+  --Min_height_100vh: 100vh;
+  --height350: 350px;
+  --height200: 200px;
+
+  /* New Widths and Heights */
+  --max_width_1440: 1440px; 
+  --min_height_50vh: 50vh; 
+  --height100: 100px;
+
+  /* Border Radius */
+  --border-radius: 8px;
+  --border-radius-small: 4px;
+  --border-radius-large: 12px;
+
+  /* New Border Radius */
+  --border-radius-circle: 50%;
+  --border-radius-xl: 16px;
+
+  /* Transitions */
+  --transition: all 0.3s ease-in-out;
+
+  /* New Transitions */
+  --transition-fast: all 0.15s ease-in-out;
+  --transition-slow: all 0.6s ease-in-out;
+
+  /* Line Height */
+  --line-height: 1.6;
+  --line_height_1_point_6: 1.6;
+
+  /* New Line Heights */
+  --line-height-tight: 1.25; 
+  --line-height-loose: 2.2; 
+
+  /* Scrollbar */
+  --scrollbar-width: 8px;
+  --scrollbar-track: #2d3748;
+  --scrollbar-thumb: #63b3ed;
+
+  /* New Scrollbar */
+  --scrollbar-thumb-hover: #4299e1;
+
+  /* Positioning */
+  --topSize_-100: -100px;
+  --topSize_-10: -10px;
+
+  /* New Positioning */
+  --z-index-low: 10;
+  --z-index-medium: 100;
+  --z-index-high: 1000;
+
+  /* New Breakpoints for Responsive Design */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+}
+

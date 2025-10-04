@@ -1,0 +1,925 @@
+@import url('../global/css/global.css');
+
+/* Register Page */
+.registerPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: var(--Min_height_100vh);
+  background-color: var(--BackgroundColor-1);
+  padding: var(--padding-large);
+}
+
+.registerSection {
+  max-width: var(--max_width_600);
+  width: 100%;
+  background-color: var(--alt-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--BackgroundColorShadow-1);
+  padding: var(--padding-large);
+  transition: transform var(--transition);
+}
+
+.registerSection:hover {
+  transform: translateY(-2px);
+}
+
+.registerHeadingSection {
+  text-align: center;
+  margin-bottom: var(--margin-large);
+}
+
+.registerHeadingSection h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  color: var(--heading-1);
+  margin-bottom: var(--margin-small);
+}
+
+.registerHeadingSection p {
+  font-size: var(--font-size-medium);
+  color: var(--paragraph-2);
+}
+
+.registerBox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin-medium);
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin-medium);
+}
+
+.register-form-group, .matrimony-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form-group label, .matrimony-form-group label {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-color);
+  margin-bottom: var(--margin-small);
+}
+
+.register-form-input, .matrimony-form-input {
+  padding: var(--padding-medium);
+  font-size: var(--font-size-base);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-small);
+  background-color: var(--light-neutral);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.register-form-input:focus, .matrimony-form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-light);
+}
+
+.register-error, .matrimony-error {
+  color: var(--error-color);
+  font-size: var(--font-size-small);
+  margin-top: var(--margin-small);
+}
+
+.register-form-submit, .matrimony-form-submit {
+  background-color: var(--playful-btn-background);
+  color: var(--light-text);
+  padding: var(--padding-medium);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition), box-shadow var(--transition);
+}
+
+.register-form-submit:hover, .matrimony-form-submit:hover {
+  background-color: var(--primary-hover);
+  box-shadow: var(--shadow-hover);
+}
+
+.register-form-submit:disabled, .matrimony-form-submit:disabled {
+  background-color: var(--neutral-color);
+  cursor: not-allowed;
+}
+
+.registerLink, .loginLink {
+  text-align: center;
+  font-size: var(--font-size-small);
+  color: var(--paragraph-2);
+}
+
+.registerLink a, .loginLink a {
+  color: var(--link);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.registerLink a:hover, .loginLink a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+.register-alert-box, .matrimony-alert-box {
+  padding: var(--padding-medium);
+  border-radius: var(--border-radius-small);
+  font-size: var(--font-size-base);
+  text-align: center;
+}
+
+.register-alert-box.register-error, .matrimony-alert-box.matrimony-error {
+  background-color: var(--error-color);
+  color: var(--light-text);
+}
+
+.register-loading, .matrimony-loading {
+  text-align: center;
+  font-size: var(--font-size-medium);
+  color: var(--text-color);
+}
+
+/* Login Page */
+.loginPage, .adminLoginPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: var(--Min_height_100vh);
+  background-color: var(--BackgroundColor-1);
+  padding: var(--padding-large);
+}
+
+.loginSection, .adminLoginSection {
+  max-width: var(--max_width_600);
+  width: 100%;
+  background-color: var(--alt-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--BackgroundColorShadow-1);
+  padding: var(--padding-large);
+  transition: transform var(--transition);
+}
+
+.loginSection:hover, .adminLoginSection:hover {
+  transform: translateY(-2px);
+}
+
+.loginHeadingSection, .headingSection {
+  text-align: center;
+  margin-bottom: var(--margin-large);
+}
+
+.loginHeadingSection h1, .headingSection h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  color: var(--heading-1);
+  margin-bottom: var(--margin-small);
+}
+
+.loginHeadingSection p, .headingSection p {
+  font-size: var(--font-size-medium);
+  color: var(--paragraph-2);
+}
+
+.loginBox, .adminLoginBox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin-medium);
+}
+
+.loginForm, .adminLoginForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin-medium);
+}
+
+/* Admin Navbar */
+.adminNavbar {
+  background-color: var(--alt-background);
+  padding: var(--padding-medium);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--BackgroundColorShadow-1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbarBrand h1 {
+  font-size: var(--font-size-h2);
+  color: var(--heading-1);
+  margin: 0;
+}
+
+.navbarLinks {
+  display: flex;
+  gap: var(--margin-medium);
+}
+
+.navLink {
+  background: none;
+  border: none;
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.navLink:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+.navLogout {
+  color: var(--error-color);
+}
+
+.navLogout:hover {
+  color: var(--error-hover);
+}
+
+.navbarToggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: var(--font-size-large);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* Admin Home Page */
+.adminHomePage {
+  background-color: var(--BackgroundColor-1);
+  padding: var(--padding-large);
+  min-height: var(--Min_height_100vh);
+}
+
+.adminHomeSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin-large);
+}
+
+.adminHomePageTotalUsers,
+.adminHomePageGenderUser,
+.AdminReportAndBlockList,
+.AdminHistorySection {
+  background-color: var(--alt-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--BackgroundColorShadow-1);
+  padding: var(--padding-large);
+}
+
+.adminHomePageTotalUsersHeading h1,
+.adminGenderHeading h1,
+.AdminReportCommentsHeading,
+.AdminBlockHeading h1,
+.AdminHistoryHeading h1 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--heading-1);
+  margin-bottom: var(--margin-medium);
+}
+
+.totalUser h3,
+.AdminListOfGender h3 {
+  font-size: var(--font-size-medium);
+  color: var(--text-color);
+  margin: var(--margin-small) 0;
+}
+
+.ReportCommentSection,
+.BlockSection,
+.DeletionHistorySection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin-medium);
+}
+
+.ReportCommentBox,
+.personWhoReceivedTheBlock,
+.historyEntry {
+  background-color: var(--light-neutral);
+  border-radius: var(--border-radius);
+  padding: var(--padding-medium);
+  box-shadow: var(--shadow-light);
+  transition: box-shadow var(--transition);
+}
+
+.ReportCommentBox:hover,
+.personWhoReceivedTheBlock:hover,
+.historyEntry:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+.AdminReportImg img,
+.personWhoReceivedTheBlockImage,
+.AdminImgReport {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: var(--margin-small);
+}
+
+.personWhoReportedImg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: var(--margin-small);
+}
+
+.AdminNameReport,
+.personWhoReceivedTheBlockName {
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-color);
+}
+
+.personWhoReportedTo {
+  margin: 0 var(--margin-small);
+  color: var(--LinkBi);
+}
+
+.ReportedUser {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-color);
+}
+
+.ListOF {
+  list-style: none;
+  padding: 0;
+  margin: var(--margin-medium) 0;
+}
+
+.ListOF li {
+  display: flex;
+  align-items: center;
+  gap: var(--margin-small);
+  margin-bottom: var(--margin-medium);
+  padding: var(--padding-small);
+  border-left: 2px solid var(--primary-color);
+}
+
+.personWhoReceivedTheReportAccountRemove,
+.personWhoReceivedTheBlockAccountRemove {
+  background-color: var(--error-color);
+  color: var(--light-text);
+  padding: var(--padding-small) var(--padding-medium);
+  border: none;
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+  font-size: var(--font-size-small);
+  transition: background-color var(--transition), box-shadow var(--transition);
+}
+
+.personWhoReceivedTheReportAccountRemove:hover,
+.personWhoReceivedTheBlockAccountRemove:hover {
+  background-color: var(--error-hover);
+  box-shadow: var(--shadow-hover);
+}
+
+.blockSectionBox p,
+.historySectionBox p {
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  margin-bottom: var(--margin-small);
+}
+
+.historyEntry h3 {
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-bold);
+  color: var(--heading-1);
+  margin-bottom: var(--margin-small);
+}
+
+.historyEntry h4 {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-color);
+  margin: var(--margin-medium) 0 var(--margin-small);
+}
+
+.historyEntry p {
+  font-size: var(--font-size-small);
+  color: var(--muted-text);
+  margin: var(--margin-small) 0;
+}
+
+.historyEntry p strong {
+  color: var(--text-color);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Admin Help Page */
+.helpPage {
+  background-color: var(--BackgroundColor-1);
+  min-height: var(--Min_height_100vh);
+  padding: var(--padding-large);
+}
+
+.ContactSupport {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--alt-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--BackgroundColorShadow-1);
+  padding: var(--padding-large);
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin-large);
+}
+
+.ContactSupportMassageBox {
+  background-color: var(--light-neutral);
+  border-radius: var(--border-radius);
+  padding: var(--padding-medium);
+  box-shadow: var(--shadow-light);
+  transition: box-shadow var(--transition);
+}
+
+.ContactSupportMassageBox:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+.ContactSupportMassageBox.attendUserColor {
+  background-color: var(--success-color);
+  color: var(--light-text);
+}
+
+.ContactSupportMassageUseName {
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-bold);
+  color: var(--heading-1);
+  margin-bottom: var(--margin-small);
+}
+
+.ContactSupportMassageUseConnectNumber {
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  margin-bottom: var(--margin-small);
+}
+
+.ContactSupportMassageUseIssueOrQuestion {
+  font-size: var(--font-size-base);
+  color: var(--muted-text);
+  margin-bottom: var(--margin-medium);
+}
+
+.btnSupported {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  padding: var(--padding-small) var(--padding-medium);
+  border: none;
+  border-radius: var(--border-radius-small);
+  cursor: pointer;
+  font-size: var(--font-size-small);
+  transition: background-color var(--transition), box-shadow var(--transition);
+}
+
+.btnSupported:hover {
+  background-color: var(--primary-hover);
+  box-shadow: var(--shadow-hover);
+}
+
+.error {
+  color: var(--error-color);
+  font-size: var(--font-size-medium);
+  text-align: center;
+  margin-bottom: var(--margin-large);
+}
+
+/* Responsive Design for Register and Login Pages */
+
+/* Large Desktop: 2560x1440 */
+@media (max-width: 2560px) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: var(--max_width_900); }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: var(--font-size-h1); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: var(--font-size-base); }
+}
+
+/* Zoom Levels for 2560x1440 */
+@media (max-width: 2560px) and (min-resolution: 0.5dppx), (max-width: 2560px) and (zoom: 0.5) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 100%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h1) * 1.5); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-base) * 1.5); }
+}
+
+@media (max-width: 2560px) and (min-resolution: 0.75dppx), (max-width: 2560px) and (zoom: 0.75) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 95%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h1) * 1.25); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-base) * 1.25); }
+}
+
+@media (max-width: 2560px) and (min-resolution: 1.25dppx), (max-width: 2560px) and (zoom: 1.25) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 85%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h1) * 0.8); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-base) * 0.8); }
+}
+
+@media (max-width: 2560px) and (min-resolution: 1.5dppx), (max-width: 2560px) and (zoom: 1.5) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 80%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h1) * 0.75); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-base) * 0.75); }
+}
+
+@media (max-width: 2560px) and (min-resolution: 2dppx), (max-width: 2560px) and (zoom: 2) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 70%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h1) * 0.5); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-base) * 0.5); }
+}
+
+/* Desktop: 1920x1080 */
+@media (max-width: 1920px) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: var(--max_width_600); }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: var(--font-size-h2); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: var(--font-size-base); }
+}
+
+/* Laptop: 1440x900 */
+@media (max-width: 1440px) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 90%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: var(--font-size-h3); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: var(--font-size-base); }
+}
+
+/* Zoom Levels for 1440x900 */
+@media (max-width: 1440px) and (min-resolution: 0.5dppx), (max-width: 1440px) and (zoom: 0.5) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 95%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h3) * 1.5); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-base) * 1.5); }
+}
+
+@media (max-width: 1440px) and (min-resolution: 0.75dppx), (max-width: 1440px) and (zoom: 0.75) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 92%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h3) * 1.25); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-base) * 1.25); }
+}
+
+@media (max-width: 1440px) and (min-resolution: 1.25dppx), (max-width: 1440px) and (zoom: 1.25) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 88%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h3) * 0.8); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-base) * 0.8); }
+}
+
+@media (max-width: 1440px) and (min-resolution: 1.5dppx), (max-width: 1440px) and (zoom: 1.5) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 85%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h3) * 0.75); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-base) * 0.75); }
+}
+
+@media (max-width: 1440px) and (min-resolution: 2dppx), (max-width: 1440px) and (zoom: 2) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 80%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h3) * 0.5); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-base) * 0.5); }
+}
+
+/* Tablet: 1024x768 */
+@media (max-width: 1024px) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 95%; padding: var(--padding-medium); }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: var(--font-size-h3); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: var(--font-size-small); }
+}
+
+/* Zoom Levels for 1024x768 */
+@media (max-width: 1024px) and (min-resolution: 0.5dppx), (max-width: 1024px) and (zoom: 0.5) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 98%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h3) * 1.5); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 1.5); }
+}
+
+@media (max-width: 1024px) and (min-resolution: 0.75dppx), (max-width: 1024px) and (zoom: 0.75) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 96%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h3) * 1.25); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 1.25); }
+}
+
+@media (max-width: 1024px) and (min-resolution: 1.25dppx), (max-width: 1024px) and (zoom: 1.25) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 92%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h3) * 0.8); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 0.8); }
+}
+
+@media (max-width: 1024px) and (min-resolution: 1.5dppx), (max-width: 1024px) and (zoom: 1.5) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 90%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h3) * 0.75); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 0.75); }
+}
+
+@media (max-width: 1024px) and (min-resolution: 2dppx), (max-width: 1024px) and (zoom: 2) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 85%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h3) * 0.5); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 0.5); }
+}
+
+/* Mobile Large: 768x606 */
+@media (max-width: 768px) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 90%; padding: var(--padding-medium); }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: var(--font-size-h4); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: var(--font-size-small); }
+  .register-form-submit, .login-form-submit, .matrimony-form-submit { font-size: var(--font-size-base); }
+}
+
+/* Zoom Levels for 768x606 */
+@media (max-width: 768px) and (min-resolution: 0.5dppx), (max-width: 768px) and (zoom: 0.5) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 95%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 1.5); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 1.5); }
+}
+
+@media (max-width: 768px) and (min-resolution: 0.75dppx), (max-width: 768px) and (zoom: 0.75) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 92%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 1.25); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 1.25); }
+}
+
+@media (max-width: 768px) and (min-resolution: 1.25dppx), (max-width: 768px) and (zoom: 1.25) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 88%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 0.8); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 0.8); }
+}
+
+@media (max-width: 768px) and (min-resolution: 1.5dppx), (max-width: 768px) and (zoom: 1.5) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 85%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 0.75); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 0.75); }
+}
+
+@media (max-width: 768px) and (min-resolution: 2dppx), (max-width: 768px) and (zoom: 2) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 80%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 0.5); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 0.5); }
+}
+
+/* Mobile Medium: 425x606 */
+@media (max-width: 425px) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 95%; padding: var(--padding-small); }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: var(--font-size-h4); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: var(--font-size-small); }
+  .register-form-submit, .login-form-submit, .matrimony-form-submit { font-size: var(--font-size-base); }
+}
+
+/* Zoom Levels for 425x606 */
+@media (max-width: 425px) and (min-resolution: 0.5dppx), (max-width: 425px) and (zoom: 0.5) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 98%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 1.5); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 1.5); }
+}
+
+@media (max-width: 425px) and (min-resolution: 0.75dppx), (max-width: 425px) and (zoom: 0.75) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 96%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 1.25); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 1.25); }
+}
+
+@media (max-width: 425px) and (min-resolution: 1.25dppx), (max-width: 425px) and (zoom: 1.25) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 92%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 0.8); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 0.8); }
+}
+
+@media (max-width: 425px) and (min-resolution: 1.5dppx), (max-width: 425px) and (zoom: 1.5) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 90%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 0.75); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 0.75); }
+}
+
+@media (max-width: 425px) and (min-resolution: 2dppx), (max-width: 425px) and (zoom: 2) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 85%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 0.5); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 0.5); }
+}
+
+/* Mobile Small: 375x606 */
+@media (max-width: 375px) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 95%; padding: var(--padding-small); }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: var(--font-size-h4); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: var(--font-size-small); }
+  .register-form-submit, .login-form-submit, .matrimony-form-submit { font-size: var(--font-size-base); }
+}
+
+/* Zoom Levels for 375x606 */
+@media (max-width: 375px) and (min-resolution: 0.5dppx), (max-width: 375px) and (zoom: 0.5) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 98%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 1.5); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 1.5); }
+}
+
+@media (max-width: 375px) and (min-resolution: 0.75dppx), (max-width: 375px) and (zoom: 0.75) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 96%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 1.25); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 1.25); }
+}
+
+@media (max-width: 375px) and (min-resolution: 1.25dppx), (max-width: 375px) and (zoom: 1.25) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 92%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 0.8); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 0.8); }
+}
+
+@media (max-width: 375px) and (min-resolution: 1.5dppx), (max-width: 375px) and (zoom: 1.5) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 90%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 0.75); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 0.75); }
+}
+
+@media (max-width: 375px) and (min-resolution: 2dppx), (max-width: 375px) and (zoom: 2) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 85%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 0.5); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 0.5); }
+}
+
+/* Mobile Extra Small: 320x606 */
+@media (max-width: 320px) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 95%; padding: var(--padding-small); }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: var(--font-size-h4); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: var(--font-size-small); }
+  .register-form-submit, .login-form-submit, .matrimony-form-submit { font-size: var(--font-size-base); }
+}
+
+/* Zoom Levels for 320x606 */
+@media (max-width: 320px) and (min-resolution: 0.5dppx), (max-width: 320px) and (zoom: 0.5) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 98%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 1.5); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 1.5); }
+}
+
+@media (max-width: 320px) and (min-resolution: 0.75dppx), (max-width: 320px) and (zoom: 0.75) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 96%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 1.25); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 1.25); }
+}
+
+@media (max-width: 320px) and (min-resolution: 1.25dppx), (max-width: 320px) and (zoom: 1.25) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 92%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 0.8); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 0.8); }
+}
+
+@media (max-width: 320px) and (min-resolution: 1.5dppx), (max-width: 320px) and (zoom: 1.5) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 90%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 0.75); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 0.75); }
+}
+
+@media (max-width: 320px) and (min-resolution: 2dppx), (max-width: 320px) and (zoom: 2) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 85%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: calc(var(--font-size-h4) * 0.5); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: calc(var(--font-size-small) * 0.5); }
+}
+
+/* Watch: 240x240 (e.g., Wear OS devices) */
+@media (max-width: 240px) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 100%; padding: var(--padding-small); }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: var(--font-size-base); }
+  .registerHeadingSection p, .loginHeadingSection p, .headingSection p { font-size: var(--font-size-small); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: var(--font-size-small); padding: var(--padding-small); }
+  .register-form-submit, .login-form-submit, .matrimony-form-submit { font-size: var(--font-size-small); padding: var(--padding-small); }
+}
+
+/* Additional Common Tablet Size: 1280x800 */
+@media (max-width: 1280px) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 90%; }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: var(--font-size-h3); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: var(--font-size-base); }
+}
+
+/* Additional Common Mobile Size: 360x640 */
+@media (max-width: 360px) {
+  .registerSection, .loginSection, .adminLoginSection { max-width: 95%; padding: var(--padding-small); }
+  .registerHeadingSection h1, .loginHeadingSection h1, .headingSection h1 { font-size: var(--font-size-h4); }
+  .register-form-input, .login-form-input, .matrimony-form-input { font-size: var(--font-size-small); }
+  .register-form-submit, .login-form-submit, .matrimony-form-submit { font-size: var(--font-size-base); }
+}
+
+/* Responsive Design for Admin Pages */
+@media (max-width: 768px) {
+  .adminHomeSection {
+    padding: var(--padding-medium);
+  }
+
+  .adminHomePageTotalUsers,
+  .adminHomePageGenderUser,
+  .AdminReportAndBlockList,
+  .AdminHistorySection {
+    padding: var(--padding-medium);
+  }
+
+  .adminHomePageTotalUsersHeading h1,
+  .adminGenderHeading h1,
+  .AdminReportCommentsHeading,
+  .AdminBlockHeading h1,
+  .AdminHistoryHeading h1 {
+    font-size: var(--font-size-h3);
+  }
+
+  .historyEntry h3 {
+    font-size: var(--font-size-base);
+  }
+
+  .historyEntry h4 {
+    font-size: var(--font-size-small);
+  }
+
+  .adminNavbar {
+    flex-wrap: wrap;
+  }
+
+  .navbarLinks {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: var(--padding-medium);
+    background-color: var(--alt-background);
+  }
+
+  .navbarLinks.active {
+    display: flex;
+  }
+
+  .navbarToggle {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-form-input, .login-form-input, .matrimony-form-input {
+    font-size: var(--font-size-small);
+  }
+
+  .register-form-submit, .login-form-submit, .matrimony-form-submit {
+    font-size: var(--font-size-base);
+  }
+
+  .AdminReportImg img,
+  .personWhoReceivedTheBlockImage,
+  .AdminImgReport {
+    width: 30px;
+    height: 30px;
+  }
+
+  .personWhoReportedImg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .historyEntry p {
+    font-size: var(--font-size-xs);
+  }
+
+  .navbarBrand h1 {
+    font-size: var(--font-size-h3);
+  }
+
+  .navLink {
+    font-size: var(--font-size-medium);
+  }
+}
+
+/* Responsive Design for Help Page */
+@media (max-width: 768px) {
+  .helpPage {
+    padding: var(--padding-medium);
+  }
+
+  .ContactSupport {
+    padding: var(--padding-medium);
+  }
+
+  .ContactSupportMassageUseName {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .ContactSupportMassageBox {
+    padding: var(--padding-small);
+  }
+
+  .btnSupported {
+    width: 100%;
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Scrollbar Styling */
+.adminHomePage ::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+}
+
+.adminHomePage ::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+.adminHomePage ::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: var(--border-radius);
+}

@@ -1,0 +1,9 @@
+@import url('../../global/css/global.css');
+
+.likeHeading{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: blue;
+    text-shadow: 1pxx 2px 2px #000000;
+}

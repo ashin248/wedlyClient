@@ -1,0 +1,608 @@
+@import url('../../global/css/global.css');
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  font-size: var(--font-size-base);
+  text-transform: capitalize;
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
+
+
+.bi {
+  font-size: var(--font-size-medium);
+  color: var(--LinkBi);
+  transition: var(--transition);
+  cursor: pointer;
+  text-shadow: var(--shadow-light);
+}
+
+/* Page Layout and Containers */
+.registration-container {
+  width: var(--width_100_percentage);
+  min-height: var(--Min_height_100vh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-small);
+  scroll-behavior: smooth;
+  background: var(--BackgroundColor-1);
+}
+
+.registrationSection {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--width_100_percentage);
+  max-width: var(--max_width_900);
+  padding: 0 var(--padding-medium) var(--padding-small) 0;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Heading and Introduction */
+.headingSection {
+  text-align: center;
+  margin-bottom: var(--marin_bottom_140);
+  position: relative;
+  top: var(--topSize_-10);
+  animation: fadeIn 1s ease-in;
+}
+
+.headingSection h1 {
+  color: var(--heading-1);
+  font-size: var(--font-size-h1);
+  text-transform: none;
+  margin-bottom: var(--margin-small);
+  text-shadow: var(--heading-1-shadow);
+}
+
+.headingSection p {
+  color: var(--paragraph-2);
+  text-transform: none;
+  max-width: var(--max_width_600);
+  font-size: var(--font-size-base);
+  line-height: var(--line_height_1_point_6);
+  margin: 0 auto;
+}
+
+/* Glowing Form Container */
+.registration {
+  width: var(--width_100_percentage);
+  max-width: var(--max_with_450);
+  background-color: transparent;
+  border-radius: var(--border-radius-large);
+  position: relative;
+  padding: var(--padding_5);
+  z-index: 1;
+  overflow: hidden;
+  top: var(--topSize_-100);
+  box-shadow: var(--shadow-medium);
+}
+
+@property --deg {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+.registration::before,
+.registration::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.registration::before {
+  inset: -3px;
+  background: conic-gradient(
+    from var(--deg),
+    var(--primary-color),
+    var(--secondary-color),
+    var(--accent-color),
+    var(--success-color),
+    var(--primary-color)
+  );
+  animation: AutoRotate 4s linear infinite;
+  filter: blur(8px);
+}
+
+.registration::after {
+  inset: 0;
+  background: var(--BackgroundColor-1);
+  filter: blur(2px);
+  z-index: -2;
+}
+
+@keyframes AutoRotate {
+  to {
+    --deg: 360deg;
+  }
+}
+
+/* Form and Inputs */
+.register {
+  background-color: var(--BackgroundColor-2);
+  border-radius: var(--border-radius);
+  padding: var(--padding-large);
+  width: var(--width_100_percentage);
+  height: var(--height350);
+  position: relative;
+  max-height: calc(var(--Min_height_100vh) - var(--height200));
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.register::-webkit-scrollbar {
+  display: none;
+}
+
+.registerForm {
+  width: 100%;
+}
+
+.labelStyle {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--margin-large);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  color: var(--paragraph-1);
+  text-transform: none;
+}
+
+.inputStyle {
+  outline: none;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  color: var(--paragraph-1);
+  background-color: var(--BackgroundColor-3);
+  padding: 12px 15px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  margin-top: var(--margin-small);
+  width: 100%;
+}
+
+.inputStyle:hover {
+  border-color: var(--playful-btn-background);
+}
+
+.inputStyle:focus {
+  border-color: var(--playful-btn-background);
+  box-shadow: var(--shadow-medium);
+}
+
+.inputStyleName {
+  text-transform: capitalize;
+}
+
+.inputStyleEmail {
+  text-transform: lowercase;
+}
+
+.inputStyleMobile,
+.inputStylePassword {
+  text-transform: none;
+}
+
+.loading,
+.alertBox {
+  padding: var(--padding-medium);
+  border-radius: var(--border-radius);
+  text-align: center;
+  margin-bottom: var(--margin-large);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  text-transform: none;
+}
+
+.loading {
+  background-color: var(--BackgroundColor-1);
+  color: var(--paragraph-2);
+}
+
+.alertBox {
+  background-color: var(--serious-btn-background);
+  color: var(--serious-btn-color);
+  border: 1px solid var(--serious-btn-background-hover);
+}
+
+.fileNameDisplay {
+  color: var(--paragraph-2);
+  margin-top: var(--margin-small);
+  font-size: var(--font-size-small);
+  text-transform: none;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: var(--padding-medium);
+  border-radius: var(--border-radius);
+  border: none;
+  background-color: var(--playful-btn-background);
+  color: var(--playful-btn-color);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--playful-btn-shadow);
+}
+
+.submitBtn:hover {
+  background-color: var(--playful-btn-background-hover);
+  box-shadow: var(--playful-btn-shadow-hover);
+  transform: scale(1.05);
+}
+
+.submitBtn:disabled {
+  background-color: var(--paragraph-2);
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+  transform: none;
+}
+
+.loginLink {
+  text-align: center;
+  margin-top: var(--margin-medium);
+  font-size: var(--font-size-small);
+  text-transform: none;
+}
+
+.loginLink a {
+  color: var(--link);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+}
+
+.loginLink a:hover {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+/* Social Login Section */
+.RegisterSocialLoginSection {
+  position: relative;
+  top: var(--topSize_50);
+  width: var(--width_100_percentage);
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.RegisterOrDivider {
+  position: relative;
+  top: -130px;
+  font-size: 1rem;
+  color: var(--paragraph-2);
+  justify-content: center;
+  display: flex;
+}
+
+.RegisterSocialButtons {
+  display: flex;
+  gap: 15px;
+  position: relative;
+  justify-content: center;
+  top: -50px;
+}
+
+.RegisterSocialBtn {
+  background-color: var(--BackgroundColor-1);
+  color: var(--playful-btn-color);
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-light);
+}
+
+.RegisterSocialBtn:hover {
+  background-color: var(--BackgroundColor-1);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Privacy Terms */
+.RegisterSocialBtnPrivacyTerms {
+  position: relative;
+  text-align: center;
+  bottom: var(--bottomSize_100);
+}
+
+.RegisterSocialBtnPrivacyTerms a {
+  color: var(--link);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition);
+  text-transform: none;
+  font-size: var(--font-size-small);
+}
+
+.RegisterSocialBtnPrivacyTerms a:hover {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+/* Responsive Design: Media Queries */
+
+/* Large PC Screens (2560x1351 and above) */
+@media screen and (min-width: 2560px) {
+  .registration-container {
+    padding: var(--padding-large);
+  }
+  .registrationSection {
+    max-width: 1200px;
+  }
+  .headingSection h1 {
+    font-size: calc(var(--font-size-h1) * 1.5);
+  }
+  .headingSection p {
+    font-size: calc(var(--font-size-base) * 1.3);
+    max-width: 800px;
+  }
+  .registration {
+    max-width: 600px;
+    padding: calc(var(--padding_5) * 2);
+  }
+  .register {
+    padding: calc(var(--padding-large) * 1.5);
+    height: 450px;
+  }
+  .inputStyle {
+    padding: 15px 20px;
+    font-size: calc(var(--font-size-base) * 1.2);
+  }
+  .submitBtn {
+    padding: calc(var(--padding-medium) * 1.5);
+    font-size: calc(var(--font-size-base) * 1.2);
+  }
+  .RegisterSocialButtons {
+    gap: 20px;
+  }
+  .RegisterSocialBtn {
+    padding: 12px 25px;
+  }
+}
+
+/* PC and Laptop Screens (1440x751 to 2560x1351) */
+@media screen and (min-width: 1440px) and (max-width: 2559px) {
+  .registrationSection {
+    max-width: 1000px;
+  }
+  .headingSection h1 {
+    font-size: calc(var(--font-size-h1) * 1.2);
+  }
+  .headingSection p {
+    font-size: calc(var(--font-size-base) * 1.1);
+    max-width: 700px;
+  }
+  .registration {
+    max-width: 500px;
+  }
+  .register {
+    padding: calc(var(--padding-large) * 1.2);
+    height: 400px;
+  }
+  .inputStyle {
+    padding: 14px 18px;
+  }
+}
+
+/* Tablets (768x606 to 1439px) */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .registrationSection {
+    max-width: 700px;
+    padding: var(--padding-medium);
+  }
+  .headingSection {
+    margin-bottom: 100px;
+  }
+  .headingSection h1 {
+    font-size: calc(var(--font-size-h1) * 0.9);
+  }
+  .headingSection p {
+    font-size: var(--font-size-base);
+    max-width: 600px;
+  }
+  .registration {
+    max-width: 400px;
+    top: -80px;
+  }
+  .register {
+    height: 380px;
+    padding: var(--padding-medium);
+  }
+  .inputStyle {
+    padding: 10px 12px;
+    font-size: var(--font-size-small);
+  }
+  .submitBtn {
+    padding: var(--padding-medium);
+    font-size: var(--font-size-small);
+  }
+  .RegisterSocialLoginSection {
+    top: 30px;
+  }
+  .RegisterOrDivider {
+    top: -100px;
+  }
+  .RegisterSocialButtons {
+    top: -40px;
+    gap: 10px;
+  }
+}
+
+/* Mobile Devices (425x606 to 767px) */
+@media screen and (min-width: 425px) and (max-width: 767px) {
+  .registration-container {
+    padding: var(--padding-small);
+  }
+  .registrationSection {
+    max-width: 90%;
+    padding: var(--padding-small);
+  }
+  .headingSection {
+    margin-bottom: 80px;
+  }
+  .headingSection h1 {
+    font-size: calc(var(--font-size-h1) * 0.8);
+  }
+  .headingSection p {
+    font-size: var(--font-size-small);
+    max-width: 90%;
+  }
+  .registration {
+    max-width: 100%;
+    padding: var(--padding_5);
+    top: -60px;
+  }
+  .register {
+    height: auto;
+    min-height: 350px;
+    padding: var(--padding-medium);
+  }
+  .inputStyle {
+    padding: 8px 10px;
+    font-size: var(--font-size-small);
+  }
+  .submitBtn {
+    padding: var(--padding-small);
+    font-size: var(--font-size-small);
+  }
+  .RegisterSocialLoginSection {
+    top: 20px;
+  }
+  .RegisterOrDivider {
+    top: -80px;
+  }
+  .RegisterSocialButtons {
+    top: -30px;
+    gap: 8px;
+  }
+  .RegisterSocialBtn {
+    padding: 8px 15px;
+  }
+  .RegisterSocialBtnPrivacyTerms {
+    bottom: 80px;
+  }
+}
+
+/* Small Mobile Devices (320x606 to 424px) */
+@media screen and (max-width: 424px) {
+  .registration-container {
+    padding: calc(var(--padding-small) * 0.8);
+  }
+  .registrationSection {
+    max-width: 95%;
+  }
+  .headingSection {
+    margin-bottom: 60px;
+    top: 0;
+  }
+  .headingSection h1 {
+    font-size: calc(var(--font-size-h1) * 0.7);
+  }
+  .headingSection p {
+    font-size: calc(var(--font-size-small) * 0.9);
+    max-width: 95%;
+  }
+  .registration {
+    max-width: 100%;
+    top: -40px;
+    padding: calc(var(--padding_5) * 0.8);
+  }
+  .register {
+    height: auto;
+    min-height: 320px;
+    padding: var(--padding-small);
+  }
+  .inputStyle {
+    padding: 6px 8px;
+    font-size: calc(var(--font-size-small) * 0.9);
+  }
+  .submitBtn {
+    padding: calc(var(--padding-small) * 0.8);
+    font-size: calc(var(--font-size-small) * 0.9);
+  }
+  .RegisterSocialLoginSection {
+    top: 10px;
+  }
+  .RegisterOrDivider {
+    top: -60px;
+    font-size: calc(var(--font-size-small) * 0.9);
+  }
+  .RegisterSocialButtons {
+    top: -20px;
+    gap: 5px;
+  }
+  .RegisterSocialBtn {
+    padding: 6px 10px;
+  }
+  .RegisterSocialBtnPrivacyTerms {
+    bottom: 60px;
+    font-size: calc(var(--font-size-small) * 0.8);
+  }
+}
+
+/* Smartwatches (280px and below) */
+@media screen and (max-width: 280px) {
+  .registration-container {
+    padding: calc(var(--padding-small) * 0.5);
+  }
+  .registrationSection {
+    max-width: 100%;
+  }
+  .headingSection {
+    margin-bottom: 40px;
+  }
+  .headingSection h1 {
+    font-size: calc(var(--font-size-h1) * 0.5);
+  }
+  .headingSection p {
+    font-size: calc(var(--font-size-small) * 0.8);
+    max-width: 100%;
+  }
+  .registration {
+    max-width: 100%;
+    top: -20px;
+    padding: calc(var(--padding_5) * 0.5);
+  }
+  .register {
+    height: auto;
+    min-height: 300px;
+    padding: calc(var(--padding-small) * 0.5);
+  }
+  .inputStyle {
+    padding: 5px 6px;
+    font-size: calc(var(--font-size-small) * 0.8);
+  }
+  .submitBtn {
+    padding: calc(var(--padding-small) * 0.5);
+    font-size: calc(var(--font-size-small) * 0.8);
+  }
+  .RegisterSocialLoginSection {
+    top: 5px;
+  }
+  .RegisterOrDivider {
+    top: -40px;
+    font-size: calc(var(--font-size-small) * 0.7);
+  }
+  .RegisterSocialButtons {
+    top: -10px;
+    gap: 3px;
+  }
+  .RegisterSocialBtn {
+    padding: 5px 8px;
+  }
+  .RegisterSocialBtnPrivacyTerms {
+    bottom: 40px;
+    font-size: calc(var(--font-size-small) * 0.7);
+  }
+}

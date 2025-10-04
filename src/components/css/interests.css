@@ -1,0 +1,482 @@
+@import url('../../global/css/global.css');
+
+
+.element.style {
+    width: 100px;
+    height: 40px;
+}
+
+
+/* Main container */
+.interestContainer {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--BackgroundColor-2); /* Light gray from global.css */
+  padding: var(--padding-large); /* 1.5rem */
+  margin: 70px auto 70px auto; /* Adjusted for TopNavBar and BottomNavBar */
+}
+
+/* Header section */
+.interestHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--max_width_800); /* 800px from global.css */
+  margin: 0 auto;
+  padding: var(--padding-large); /* 1.5rem */
+  border-radius: var(--border-radius); /* 8px */
+}
+
+/* Heading */
+.interestHeading {
+  color: var(--secondary-color);
+  font-size: var(--font-size-h2); /* 1.75rem */
+  margin-bottom: var(--margin-large); /* 1.5rem */
+  text-shadow: var(--shadow-light);
+  text-align: center;
+}
+
+/* Interest list container */
+.massageOfInterest {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: var(--max_width_800);
+  margin: 0 auto;
+  padding: var(--padding-medium); /* 0.75rem */
+  gap: var(--gap-large); /* 1.5rem */
+}
+
+/* No interests message */
+.massageInterest {
+  font-weight: 400;
+  color: var(--text-color);
+  font-size: var(--font-size-base); /* 1rem */
+  text-align: center;
+  padding: var(--padding-medium); /* 0.75rem */
+  background-color: var(--alt-background);
+  border-radius: var(--border-radius); /* 8px */
+  width: 100%;
+}
+
+/* Interest list item */
+.interestListBox {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-medium); /* 1rem */
+  padding: var(--padding-medium); /* 0.75rem */
+  background-color: var(--BackgroundColor-1); /* Soft white from global.css */
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius); /* 8px */
+  box-shadow: var(--shadow-light);
+  transition: var(--transition); /* 0.3s ease from global.css */
+  width: 100%;
+}
+
+.interestListBox:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* User image */
+.interestUserImage img {
+  border-radius: var(--border-radius); /* 8px */
+  border: 2px solid var(--secondary-color);
+  transition: var(--transition);
+  width: 100px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.interestUserImage img:hover {
+  transform: scale(1.05);
+  border-color: var(--primary-color);
+}
+
+/* User name */
+.interestUserName {
+  color: var(--text-color);
+  font-size: var(--font-size-base); /* 1rem */
+  flex-grow: 1;
+}
+
+/* Buttons */
+.interestAccept,
+.interestReject,
+.interestAcceptActiveMassageBtn {
+  padding: var(--padding-small); /* 0.5rem */
+  font-size: var(--font-size-base); /* 1rem */
+  color: var(--light-text);
+  border: none;
+  border-radius: var(--border-radius); /* 8px */
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100px;
+  text-align: center;
+  height: 40px;
+}
+
+.interestAccept {
+  background-color: var(--success-color);
+  box-shadow: var(--shadow-light);
+}
+
+.interestAccept:hover {
+  background-color: var(--success-hover);
+  box-shadow: var(--shadow-hover);
+}
+
+.interestAccept.accepted {
+  background-color: var(--neutral-color);
+  box-shadow: var(--shadow-light);
+}
+
+.interestAccept.accepted:hover {
+  background-color: var(--dark-neutral);
+  box-shadow: var(--shadow-hover);
+}
+
+.interestReject {
+  background-color: var(--error-color);
+  box-shadow: var(--shadow-light);
+}
+
+.interestReject:hover {
+  background-color: var(--error-hover);
+  box-shadow: var(--shadow-hover);
+}
+
+.interestAcceptActiveMassageBtn {
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow-light);
+  height: 40px;
+}
+
+.interestAcceptActiveMassageBtn:hover {
+  background-color: var(--primary-hover);
+  box-shadow: var(--shadow-hover);
+}
+
+.interestAcceptActiveMassageBtn a {
+  color: var(--light-text);
+  text-decoration: none;
+  font-size: var(--font-size-base); /* 1rem */
+}
+
+.interestAcceptActiveMassageBtn a:hover {
+  color: var(--light-text);
+}
+
+/* Responsive Adjustments */
+
+/* Smartwatches (≤280px) */
+@media screen and (max-width: 280px) {
+  .interestContainer {
+    padding: calc(var(--padding-small) * 0.5);
+    margin: 45px auto 45px auto;
+  }
+  .interestHeader {
+    padding: calc(var(--padding-small) * 0.5);
+  }
+  .interestHeading {
+    font-size: calc(var(--font-size-h2) * 0.7);
+    margin-bottom: calc(var(--margin-large) * 0.5);
+  }
+  .massageOfInterest {
+    padding: calc(var(--padding-small) * 0.5);
+    gap: calc(var(--gap-large) * 0.5);
+  }
+  .massageInterest {
+    font-size: calc(var(--font-size-base) * 0.7);
+    padding: calc(var(--padding-small) * 0.5);
+  }
+  .interestListBox {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: calc(var(--gap-medium) * 0.5);
+    padding: calc(var(--padding-small) * 0.5);
+  }
+  .interestUserImage img {
+    width: 60px;
+    height: 30px;
+  }
+  .interestUserName {
+    font-size: calc(var(--font-size-base) * 0.7);
+  }
+  .interestAccept,
+  .interestReject,
+  .interestAcceptActiveMassageBtn {
+    width: 100%;
+    font-size: calc(var(--font-size-base) * 0.7);
+    padding: calc(var(--padding-small) * 0.5);
+    height: auto;
+  }
+  .interestAcceptActiveMassageBtn {
+    height: 30px;
+  }
+}
+
+/* Small Mobile Devices (320x606 to 424px) */
+@media screen and (max-width: 424px) {
+  .interestContainer {
+    padding: calc(var(--padding-small) * 0.8);
+    margin: 55px auto 55px auto;
+  }
+  .interestHeader {
+    padding: calc(var(--padding-small) * 0.8);
+  }
+  .interestHeading {
+    font-size: calc(var(--font-size-h2) * 0.8);
+    margin-bottom: calc(var(--margin-large) * 0.8);
+  }
+  .massageOfInterest {
+    padding: calc(var(--padding-small) * 0.8);
+    gap: calc(var(--gap-large) * 0.8);
+  }
+  .massageInterest {
+    font-size: calc(var(--font-size-base) * 0.8);
+    padding: calc(var(--padding-small) * 0.8);
+  }
+  .interestListBox {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: calc(var(--gap-medium) * 0.8);
+    padding: calc(var(--padding-small) * 0.8);
+  }
+  .interestUserImage img {
+    width: 80px;
+    height: 40px;
+  }
+  .interestUserName {
+    font-size: calc(var(--font-size-base) * 0.8);
+  }
+  .interestAccept,
+  .interestReject,
+  .interestAcceptActiveMassageBtn {
+    width: 100%;
+    font-size: calc(var(--font-size-base) * 0.8);
+    padding: calc(var(--padding-small) * 0.8);
+    height: auto;
+  }
+  .interestAcceptActiveMassageBtn {
+    height: 35px;
+  }
+}
+
+/* Mobile Devices (425x606 to 767px) */
+@media screen and (min-width: 425px) and (max-width: 767px) {
+  .interestContainer {
+    padding: var(--padding-medium);
+    margin: 65px auto 65px auto;
+  }
+  .interestHeader {
+    padding: var(--padding-medium);
+  }
+  .interestHeading {
+    font-size: calc(var(--font-size-h2) * 0.9);
+    margin-bottom: var(--margin-medium);
+  }
+  .massageOfInterest {
+    padding: var(--padding-medium);
+    gap: var(--gap-medium);
+  }
+  .massageInterest {
+    font-size: calc(var(--font-size-base) * 0.9);
+    padding: var(--padding-medium);
+  }
+  .interestListBox {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-small);
+    padding: var(--padding-medium);
+  }
+  .interestUserImage img {
+    width: 90px;
+    height: 45px;
+  }
+  .interestUserName {
+    font-size: calc(var(--font-size-base) * 0.9);
+  }
+  .interestAccept,
+  .interestReject,
+  .interestAcceptActiveMassageBtn {
+    width: 100%;
+    font-size: calc(var(--font-size-base) * 0.9);
+    padding: var(--padding-small);
+    height: auto;
+  }
+  .interestAcceptActiveMassageBtn {
+    height: 40px;
+  }
+}
+
+/* Tablets (768x606 to 1439px) */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .interestContainer {
+    padding: calc(var(--padding-large) * 0.8);
+    margin: 70px auto 70px auto;
+  }
+  .interestHeader {
+    padding: calc(var(--padding-large) * 0.8);
+  }
+  .interestHeading {
+    font-size: var(--font-size-h2);
+    margin-bottom: calc(var(--margin-large) * 0.8);
+  }
+  .massageOfInterest {
+    padding: calc(var(--padding-medium) * 0.8);
+    gap: calc(var(--gap-large) * 0.8);
+  }
+  .massageInterest {
+    font-size: var(--font-size-base);
+    padding: calc(var(--padding-medium) * 0.8);
+  }
+  .interestListBox {
+    gap: calc(var(--gap-medium) * 0.8);
+    padding: calc(var(--padding-medium) * 0.8);
+  }
+  .interestUserImage img {
+    width: 100px;
+    height: 50px;
+  }
+  .interestUserName {
+    font-size: var(--font-size-base);
+  }
+  .interestAccept,
+  .interestReject,
+  .interestAcceptActiveMassageBtn {
+    font-size: var(--font-size-base);
+    padding: calc(var(--padding-small) * 0.8);
+  }
+}
+
+/* Laptops/Desktops (1025px–1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .interestContainer {
+    padding: var(--padding-large);
+    margin: 80px auto 80px auto;
+  }
+  .interestHeader {
+    padding: var(--padding-large);
+  }
+  .interestHeading {
+    font-size: calc(var(--font-size-h2) * 1.1);
+    margin-bottom: var(--margin-large);
+  }
+  .massageOfInterest {
+    padding: var(--padding-medium);
+    gap: var(--gap-large);
+  }
+  .massageInterest {
+    font-size: calc(var(--font-size-base) * 1.1);
+    padding: var(--padding-medium);
+  }
+  .interestListBox {
+    gap: var(--gap-medium);
+    padding: var(--padding-medium);
+  }
+  .interestUserImage img {
+    width: 110px;
+    height: 55px;
+  }
+  .interestUserName {
+    font-size: calc(var(--font-size-base) * 1.1);
+  }
+  .interestAccept,
+  .interestReject,
+  .interestAcceptActiveMassageBtn {
+    font-size: calc(var(--font-size-base) * 1.1);
+    padding: var(--padding-small);
+    width: 110px;
+  }
+}
+
+/* PC and Laptop Screens (1440x751 to 2559px) */
+@media screen and (min-width: 1440px) and (max-width: 2559px) {
+  .interestContainer {
+    padding: calc(var(--padding-large) * 1.2);
+    margin: 80px auto 80px auto;
+  }
+  .interestHeader {
+    padding: calc(var(--padding-large) * 1.2);
+  }
+  .interestHeading {
+    font-size: calc(var(--font-size-h2) * 1.2);
+    margin-bottom: calc(var(--margin-large) * 1.2);
+  }
+  .massageOfInterest {
+    padding: calc(var(--padding-medium) * 1.2);
+    gap: calc(var(--gap-large) * 1.2);
+  }
+  .massageInterest {
+    font-size: calc(var(--font-size-base) * 1.2);
+    padding: calc(var(--padding-medium) * 1.2);
+  }
+  .interestListBox {
+    gap: calc(var(--gap-medium) * 1.2);
+    padding: calc(var(--padding-medium) * 1.2);
+  }
+  .interestUserImage img {
+    width: 120px;
+    height: 60px;
+  }
+  .interestUserName {
+    font-size: calc(var(--font-size-base) * 1.2);
+  }
+  .interestAccept,
+  .interestReject,
+  .interestAcceptActiveMassageBtn {
+    font-size: calc(var(--font-size-base) * 1.2);
+    padding: calc(var(--padding-small) * 1.2);
+    width: 120px;
+  }
+}
+
+/* Large PC Screens (≥2560px) */
+@media screen and (min-width: 2560px) {
+  .interestContainer {
+    padding: calc(var(--padding-large) * 1.5);
+    margin: 100px auto 100px auto;
+  }
+  .interestHeader {
+    padding: calc(var(--padding-large) * 1.5);
+    max-width: var(--max_width_1000); /* 1000px for larger screens */
+  }
+  .interestHeading {
+    font-size: calc(var(--font-size-h2) * 1.3);
+    margin-bottom: calc(var(--margin-large) * 1.5);
+  }
+  .massageOfInterest {
+    padding: calc(var(--padding-medium) * 1.5);
+    gap: calc(var(--gap-large) * 1.5);
+    max-width: var(--max_width_1000);
+  }
+  .massageInterest {
+    font-size: calc(var(--font-size-base) * 1.3);
+    padding: calc(var(--padding-medium) * 1.5);
+  }
+  .interestListBox {
+    gap: calc(var(--gap-medium) * 1.5);
+    padding: calc(var(--padding-medium) * 1.5);
+  }
+  .interestUserImage img {
+    width: 130px;
+    height: 65px;
+  }
+  .interestUserName {
+    font-size: calc(var(--font-size-base) * 1.3);
+  }
+  .interestAccept,
+  .interestReject,
+  .interestAcceptActiveMassageBtn {
+    font-size: calc(var(--font-size-base) * 1.3);
+    padding: calc(var(--padding-small) * 1.5);
+    width: 130px;
+  }
+}

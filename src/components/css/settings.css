@@ -1,0 +1,505 @@
+@import url('../../global/css/global.css');
+
+/* Main container */
+.settings-container {
+  width: 100%;
+  max-width: var(--max_width_600); /* 600px from global.css */
+  margin: 70px auto 70px auto; /* Adjusted for TopNavBar and BottomNavBar */
+  padding: var(--padding-large); /* 1.5rem */
+  font-family: var(--font-family); /* Roboto, Inter from global.css */
+  background-color: var(--BackgroundColor-2); /* Light gray from global.css */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Main heading */
+.settings-container h1 {
+  font-size: var(--font-size-h1); /* 2.5rem */
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: var(--margin-large); /* 1.5rem */
+}
+
+/* Settings section */
+.settings-section {
+  margin-bottom: var(--margin-large); /* 1.5rem */
+  width: 100%;
+}
+
+/* Section heading */
+.settings-section h2 {
+  font-size: var(--font-size-h2); /* 1.75rem */
+  color: var(--primary-color); /* Replaces #A270AF */
+  margin-bottom: var(--margin-medium); /* 0.75rem */
+}
+
+/* Paragraph text */
+.settings-section p {
+  font-size: var(--font-size-base); /* 1rem */
+  color: var(--text-color);
+  line-height: var(--line-height); /* 1.6 from global.css */
+}
+
+/* Form styling */
+.settings-section form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-medium); /* 1rem */
+}
+
+/* Label styling */
+.labelStyle {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-size-base); /* 1rem */
+  color: var(--text-color);
+}
+
+/* Input styling */
+.inputStyle {
+  padding: var(--padding-small); /* 0.5rem */
+  font-size: var(--font-size-base); /* 1rem */
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius); /* 8px */
+  margin-top: var(--margin-small); /* 0.5rem */
+  background-color: var(--alt-background);
+}
+
+.inputStyle:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-light);
+}
+
+/* Error message */
+.error {
+  color: var(--error-color);
+  font-size: var(--font-size-small); /* 0.875rem */
+  margin-top: var(--margin-small); /* 0.5rem */
+}
+
+/* Alert box */
+.alertBox {
+  background-color: var(--error-bg); /* Light red from global.css */
+  color: var(--error-color);
+  padding: var(--padding-small); /* 0.5rem */
+  border-radius: var(--border-radius); /* 8px */
+  margin-bottom: var(--margin-medium); /* 0.75rem */
+}
+
+/* Success box */
+.successBox {
+  background-color: var(--success-bg); /* Light green from global.css */
+  color: var(--success-color);
+  padding: var(--padding-small); /* 0.5rem */
+  border-radius: var(--border-radius); /* 8px */
+  margin-bottom: var(--margin-medium); /* 0.75rem */
+}
+
+/* Submit button */
+.submitBtn {
+  background-color: var(--primary-color); /* Replaces #A270AF */
+  color: var(--light-text);
+  padding: var(--padding-medium); /* 0.75rem */
+  border: none;
+  border-radius: var(--border-radius); /* 8px */
+  cursor: pointer;
+  font-size: var(--font-size-base); /* 1rem */
+  transition: var(--transition); /* 0.3s ease from global.css */
+}
+
+.submitBtn:hover {
+  background-color: var(--primary-hover); /* Replaces #8B5C9A */
+  box-shadow: var(--shadow-hover);
+}
+
+/* Delete button */
+.deleteBtn {
+  background-color: var(--error-color); /* Replaces #dc3545 */
+  color: var(--light-text);
+  padding: var(--padding-medium); /* 0.75rem */
+  border: none;
+  border-radius: var(--border-radius); /* 8px */
+  cursor: pointer;
+  font-size: var(--font-size-base); /* 1rem */
+  transition: var(--transition);
+}
+
+.deleteBtn:hover {
+  background-color: var(--error-hover); /* Replaces #c82333 */
+  box-shadow: var(--shadow-hover);
+}
+
+/* Toast notification */
+.custom-toast {
+  font-size: var(--font-size-base); /* 1rem */
+  background-color: var(--BackgroundColor-2);
+  color: var(--text-color);
+  border-radius: var(--border-radius); /* 8px */
+}
+
+/* Responsive Adjustments */
+
+/* Smartwatches (≤280px) */
+@media screen and (max-width: 280px) {
+  .settings-container {
+    padding: calc(var(--padding-small) * 0.5);
+    margin: 45px auto 45px auto;
+    max-width: 100%;
+  }
+  .settings-container h1 {
+    font-size: calc(var(--font-size-h1) * 0.7);
+    margin-bottom: calc(var(--margin-large) * 0.5);
+  }
+  .settings-section {
+    margin-bottom: calc(var(--margin-large) * 0.5);
+  }
+  .settings-section h2 {
+    font-size: calc(var(--font-size-h2) * 0.7);
+    margin-bottom: calc(var(--margin-medium) * 0.5);
+  }
+  .settings-section p {
+    font-size: calc(var(--font-size-base) * 0.7);
+  }
+  .settings-section form {
+    gap: calc(var(--gap-medium) * 0.5);
+  }
+  .labelStyle {
+    font-size: calc(var(--font-size-base) * 0.7);
+  }
+  .inputStyle {
+    font-size: calc(var(--font-size-base) * 0.7);
+    padding: calc(var(--padding-small) * 0.5);
+    margin-top: calc(var(--margin-small) * 0.5);
+  }
+  .error {
+    font-size: calc(var(--font-size-small) * 0.7);
+    margin-top: calc(var(--margin-small) * 0.5);
+  }
+  .alertBox,
+  .successBox {
+    font-size: calc(var(--font-size-base) * 0.7);
+    padding: calc(var(--padding-small) * 0.5);
+    margin-bottom: calc(var(--margin-medium) * 0.5);
+  }
+  .submitBtn,
+  .deleteBtn {
+    font-size: calc(var(--font-size-base) * 0.7);
+    padding: calc(var(--padding-medium) * 0.5);
+  }
+  .custom-toast {
+    font-size: calc(var(--font-size-base) * 0.7);
+  }
+}
+
+/* Small Mobile Devices (320x606 to 424px) */
+@media screen and (max-width: 424px) {
+  .settings-container {
+    padding: calc(var(--padding-small) * 0.8);
+    margin: 55px auto 55px auto;
+    max-width: 100%;
+  }
+  .settings-container h1 {
+    font-size: calc(var(--font-size-h1) * 0.8);
+    margin-bottom: calc(var(--margin-large) * 0.8);
+  }
+  .settings-section {
+    margin-bottom: calc(var(--margin-large) * 0.8);
+  }
+  .settings-section h2 {
+    font-size: calc(var(--font-size-h2) * 0.8);
+    margin-bottom: calc(var(--margin-medium) * 0.8);
+  }
+  .settings-section p {
+    font-size: calc(var(--font-size-base) * 0.8);
+  }
+  .settings-section form {
+    gap: calc(var(--gap-medium) * 0.8);
+  }
+  .labelStyle {
+    font-size: calc(var(--font-size-base) * 0.8);
+  }
+  .inputStyle {
+    font-size: calc(var(--font-size-base) * 0.8);
+    padding: calc(var(--padding-small) * 0.8);
+    margin-top: calc(var(--margin-small) * 0.8);
+  }
+  .error {
+    font-size: calc(var(--font-size-small) * 0.8);
+    margin-top: calc(var(--margin-small) * 0.8);
+  }
+  .alertBox,
+  .successBox {
+    font-size: calc(var(--font-size-base) * 0.8);
+    padding: calc(var(--padding-small) * 0.8);
+    margin-bottom: calc(var(--margin-medium) * 0.8);
+  }
+  .submitBtn,
+  .deleteBtn {
+    font-size: calc(var(--font-size-base) * 0.8);
+    padding: calc(var(--padding-medium) * 0.8);
+  }
+  .custom-toast {
+    font-size: calc(var(--font-size-base) * 0.8);
+  }
+}
+
+/* Mobile Devices (425x606 to 767px) */
+@media screen and (min-width: 425px) and (max-width: 767px) {
+  .settings-container {
+    padding: var(--padding-medium);
+    margin: 65px auto 65px auto;
+    max-width: 90%;
+  }
+  .settings-container h1 {
+    font-size: calc(var(--font-size-h1) * 0.9);
+    margin-bottom: var(--margin-medium);
+  }
+  .settings-section {
+    margin-bottom: var(--margin-medium);
+  }
+  .settings-section h2 {
+    font-size: calc(var(--font-size-h2) * 0.9);
+    margin-bottom: var(--margin-medium);
+  }
+  .settings-section p {
+    font-size: calc(var(--font-size-base) * 0.9);
+  }
+  .settings-section form {
+    gap: var(--gap-medium);
+  }
+  .labelStyle {
+    font-size: calc(var(--font-size-base) * 0.9);
+  }
+  .inputStyle {
+    font-size: calc(var(--font-size-base) * 0.9);
+    padding: var(--padding-small);
+    margin-top: var(--margin-small);
+  }
+  .error {
+    font-size: calc(var(--font-size-small) * 0.9);
+    margin-top: var(--margin-small);
+  }
+  .alertBox,
+  .successBox {
+    font-size: calc(var(--font-size-base) * 0.9);
+    padding: var(--padding-small);
+    margin-bottom: var(--margin-medium);
+  }
+  .submitBtn,
+  .deleteBtn {
+    font-size: calc(var(--font-size-base) * 0.9);
+    padding: var(--padding-medium);
+  }
+  .custom-toast {
+    font-size: calc(var(--font-size-base) * 0.9);
+  }
+}
+
+/* Tablets (768x606 to 1439px) */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .settings-container {
+    padding: calc(var(--padding-large) * 0.8);
+    margin: 70px auto 70px auto;
+    max-width: var(--max_width_600);
+  }
+  .settings-container h1 {
+    font-size: var(--font-size-h1);
+    margin-bottom: calc(var(--margin-large) * 0.8);
+  }
+  .settings-section {
+    margin-bottom: calc(var(--margin-large) * 0.8);
+  }
+  .settings-section h2 {
+    font-size: var(--font-size-h2);
+    margin-bottom: calc(var(--margin-medium) * 0.8);
+  }
+  .settings-section p {
+    font-size: var(--font-size-base);
+  }
+  .settings-section form {
+    gap: calc(var(--gap-medium) * 0.8);
+  }
+  .labelStyle {
+    font-size: var(--font-size-base);
+  }
+  .inputStyle {
+    font-size: var(--font-size-base);
+    padding: calc(var(--padding-small) * 0.8);
+    margin-top: calc(var(--margin-small) * 0.8);
+  }
+  .error {
+    font-size: var(--font-size-small);
+    margin-top: calc(var(--margin-small) * 0.8);
+  }
+  .alertBox,
+  .successBox {
+    font-size: var(--font-size-base);
+    padding: calc(var(--padding-small) * 0.8);
+    margin-bottom: calc(var(--margin-medium) * 0.8);
+  }
+  .submitBtn,
+  .deleteBtn {
+    font-size: var(--font-size-base);
+    padding: calc(var(--padding-medium) * 0.8);
+  }
+  .custom-toast {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Laptops/Desktops (1025px–1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .settings-container {
+    padding: var(--padding-large);
+    margin: 80px auto 80px auto;
+  }
+  .settings-container h1 {
+    font-size: calc(var(--font-size-h1) * 1.1);
+    margin-bottom: var(--margin-large);
+  }
+  .settings-section {
+    margin-bottom: var(--margin-large);
+  }
+  .settings-section h2 {
+    font-size: calc(var(--font-size-h2) * 1.1);
+    margin-bottom: var(--margin-medium);
+  }
+  .settings-section p {
+    font-size: calc(var(--font-size-base) * 1.1);
+  }
+  .settings-section form {
+    gap: var(--gap-medium);
+  }
+  .labelStyle {
+    font-size: calc(var(--font-size-base) * 1.1);
+  }
+  .inputStyle {
+    font-size: calc(var(--font-size-base) * 1.1);
+    padding: var(--padding-small);
+    margin-top: var(--margin-small);
+  }
+  .error {
+    font-size: calc(var(--font-size-small) * 1.1);
+    margin-top: var(--margin-small);
+  }
+  .alertBox,
+  .successBox {
+    font-size: calc(var(--font-size-base) * 1.1);
+    padding: var(--padding-small);
+    margin-bottom: var(--margin-medium);
+  }
+  .submitBtn,
+  .deleteBtn {
+    font-size: calc(var(--font-size-base) * 1.1);
+    padding: var(--padding-medium);
+  }
+  .custom-toast {
+    font-size: calc(var(--font-size-base) * 1.1);
+  }
+}
+
+/* PC and Laptop Screens (1440x751 to 2559px) */
+@media screen and (min-width: 1440px) and (max-width: 2559px) {
+  .settings-container {
+    padding: calc(var(--padding-large) * 1.2);
+    margin: 80px auto 80px auto;
+  }
+  .settings-container h1 {
+    font-size: calc(var(--font-size-h1) * 1.2);
+    margin-bottom: calc(var(--margin-large) * 1.2);
+  }
+  .settings-section {
+    margin-bottom: calc(var(--margin-large) * 1.2);
+  }
+  .settings-section h2 {
+    font-size: calc(var(--font-size-h2) * 1.2);
+    margin-bottom: calc(var(--margin-medium) * 1.2);
+  }
+  .settings-section p {
+    font-size: calc(var(--font-size-base) * 1.2);
+  }
+  .settings-section form {
+    gap: calc(var(--gap-medium) * 1.2);
+  }
+  .labelStyle {
+    font-size: calc(var(--font-size-base) * 1.2);
+  }
+  .inputStyle {
+    font-size: calc(var(--font-size-base) * 1.2);
+    padding: calc(var(--padding-small) * 1.2);
+    margin-top: calc(var(--margin-small) * 1.2);
+  }
+  .error {
+    font-size: calc(var(--font-size-small) * 1.2);
+    margin-top: calc(var(--margin-small) * 1.2);
+  }
+  .alertBox,
+  .successBox {
+    font-size: calc(var(--font-size-base) * 1.2);
+    padding: calc(var(--padding-small) * 1.2);
+    margin-bottom: calc(var(--margin-medium) * 1.2);
+  }
+  .submitBtn,
+  .deleteBtn {
+    font-size: calc(var(--font-size-base) * 1.2);
+    padding: calc(var(--padding-medium) * 1.2);
+  }
+  .custom-toast {
+    font-size: calc(var(--font-size-base) * 1.2);
+  }
+}
+
+/* Large PC Screens (≥2560px) */
+@media screen and (min-width: 2560px) {
+  .settings-container {
+    padding: calc(var(--padding-large) * 1.5);
+    margin: 100px auto 100px auto;
+    max-width: var(--max_width_800); /* 800px for larger screens */
+  }
+  .settings-container h1 {
+    font-size: calc(var(--font-size-h1) * 1.3);
+    margin-bottom: calc(var(--margin-large) * 1.5);
+  }
+  .settings-section {
+    margin-bottom: calc(var(--margin-large) * 1.5);
+  }
+  .settings-section h2 {
+    font-size: calc(var(--font-size-h2) * 1.3);
+    margin-bottom: calc(var(--margin-medium) * 1.5);
+  }
+  .settings-section p {
+    font-size: calc(var(--font-size-base) * 1.3);
+  }
+  .settings-section form {
+    gap: calc(var(--gap-medium) * 1.5);
+  }
+  .labelStyle {
+    font-size: calc(var(--font-size-base) * 1.3);
+  }
+  .inputStyle {
+    font-size: calc(var(--font-size-base) * 1.3);
+    padding: calc(var(--padding-small) * 1.5);
+    margin-top: calc(var(--margin-small) * 1.5);
+  }
+  .error {
+    font-size: calc(var(--font-size-small) * 1.3);
+    margin-top: calc(var(--margin-small) * 1.5);
+  }
+  .alertBox,
+  .successBox {
+    font-size: calc(var(--font-size-base) * 1.3);
+    padding: calc(var(--padding-small) * 1.5);
+    margin-bottom: calc(var(--margin-medium) * 1.5);
+  }
+  .submitBtn,
+  .deleteBtn {
+    font-size: calc(var(--font-size-base) * 1.3);
+    padding: calc(var(--padding-medium) * 1.5);
+  }
+  .custom-toast {
+    font-size: calc(var(--font-size-base) * 1.3);
+  }
+}

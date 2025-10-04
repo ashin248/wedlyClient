@@ -1,0 +1,683 @@
+@import url('../../global/css/global.css');
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--BackgroundColor-2);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Base button styles */
+button {
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  transition: var(--transition);
+  border-radius: var(--border-radius);
+  padding: var(--padding-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Keyframe for a subtle lift and shadow on hover */
+@keyframes hover-lift {
+  from {
+    transform: translateY(0);
+    box-shadow: var(--shadow-light);
+  }
+  to {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+  }
+}
+
+/* Keyframe for a fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Alert dialog container */
+.alert-dialog {
+  background-color: var(--BackgroundColor-1);
+  padding: var(--padding-large);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-medium);
+  max-width: 28rem;
+  width: 90%;
+  text-align: center;
+  transform: translateZ(20px);
+  transition: transform var(--transition);
+}
+
+/* Alert dialog message */
+.alert-message {
+  font-size: var(--font-size-medium);
+  font-weight: 600;
+  margin-bottom: var(--margin-medium);
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
+/* Button container */
+.alert-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--gap-medium);
+}
+
+/* OK and Confirm buttons */
+.ok-button, .confirm-button {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  padding: var(--padding-small) var(--padding-medium);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+}
+
+.ok-button:hover, .confirm-button:hover {
+  background-color: var(--primary-hover);
+  animation: hover-lift 0.2s ease-out forwards;
+}
+
+/* Main container */
+.main-container {
+  max-width: var(--max_width_1280);
+  margin: 70px auto 70px auto; /* Adjusted for TopNavBar and BottomNavBar */
+  padding: var(--padding-large);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heading */
+.headingBlock {
+  margin-top: var(--margin-large);
+  text-align: center;
+}
+
+.card-title-blocked {
+  font-size: var(--font-size-h2);
+  color: var(--secondary-color);
+  font-weight: 600;
+  text-shadow: var(--shadow-light);
+}
+
+/* No users message */
+.no-users {
+  font-size: var(--font-size-medium);
+  color: var(--text-color);
+  text-align: center;
+  margin-top: var(--margin-large);
+}
+
+/* Card container */
+.card-container {
+  width: 100%;
+  padding-top: var(--padding-large);
+}
+
+/* Blocked user list */
+.blocked-user-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-medium);
+  padding: var(--padding-medium);
+}
+
+/* Blocked user item */
+.blocked-user-item {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--BackgroundColor-1);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--padding-medium);
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+}
+
+.blocked-user-item:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* User info */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-medium);
+  margin-bottom: var(--margin-small);
+}
+
+/* User image */
+.user-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--secondary-color);
+  transition: var(--transition);
+}
+
+.user-image:hover {
+  transform: scale(1.05);
+}
+
+/* User name */
+.user-name {
+  font-size: var(--font-size-medium);
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+
+/* User actions */
+.user-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-small);
+  margin-top: var(--margin-small);
+}
+
+/* Report textarea */
+.report-textarea {
+  width: 100%;
+  padding: var(--padding-small);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--alt-background);
+  color: var(--text-color);
+  font-size: var(--font-size-base);
+  margin-bottom: var(--margin-small);
+  resize: vertical;
+  min-height: 80px;
+}
+
+.report-textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-light);
+}
+
+/* Unblock and report buttons */
+.unblock-button, .report-button {
+  width: 100%;
+  background-color: var(--error-color);
+  color: var(--light-text);
+  box-shadow: var(--shadow-light);
+}
+
+.unblock-button:hover, .report-button:hover {
+  background-color: var(--error-hover);
+  animation: hover-lift 0.2s ease-out forwards;
+}
+
+.report-button {
+  background-color: var(--primary-color);
+}
+
+.report-button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Responsive Adjustments */
+
+/* Smartwatches (≤280px) */
+@media screen and (max-width: 280px) {
+  .main-container {
+    padding: calc(var(--padding-small) * 0.5);
+    margin: 45px auto 45px auto;
+  }
+  .headingBlock {
+    margin-top: var(--margin-small);
+  }
+  .card-title-blocked {
+    font-size: calc(var(--font-size-h2) * 0.7);
+  }
+  .no-users {
+    font-size: calc(var(--font-size-medium) * 0.7);
+  }
+  .card-container {
+    padding-top: calc(var(--padding-small) * 0.5);
+  }
+  .blocked-user-list {
+    gap: calc(var(--gap-small) * 0.5);
+    padding: calc(var(--padding-small) * 0.5);
+  }
+  .blocked-user-item {
+    padding: calc(var(--padding-small) * 0.5);
+  }
+  .user-info {
+    gap: calc(var(--gap-small) * 0.5);
+  }
+  .user-image {
+    width: 25px;
+    height: 25px;
+  }
+  .user-name {
+    font-size: calc(var(--font-size-medium) * 0.7);
+  }
+  .user-actions {
+    gap: calc(var(--gap-small) * 0.5);
+    margin-top: calc(var(--margin-small) * 0.5);
+  }
+  .report-textarea {
+    font-size: calc(var(--font-size-base) * 0.7);
+    min-height: 60px;
+  }
+  .unblock-button, .report-button {
+    font-size: calc(var(--font-size-base) * 0.7);
+    padding: calc(var(--padding-small) * 0.5);
+  }
+  .alert-dialog {
+    padding: calc(var(--padding-large) * 0.5);
+    max-width: 14rem;
+  }
+  .alert-message {
+    font-size: calc(var(--font-size-medium) * 0.7);
+  }
+  .alert-buttons {
+    gap: calc(var(--gap-small) * 0.5);
+  }
+}
+
+/* Small Mobile Devices (320x606 to 424px) */
+@media screen and (max-width: 424px) {
+  .main-container {
+    padding: calc(var(--padding-small) * 0.8);
+    margin: 55px auto 55px auto;
+  }
+  .headingBlock {
+    margin-top: calc(var(--margin-small) * 0.8);
+  }
+  .card-title-blocked {
+    font-size: calc(var(--font-size-h2) * 0.8);
+  }
+  .no-users {
+    font-size: calc(var(--font-size-medium) * 0.8);
+  }
+  .card-container {
+    padding-top: calc(var(--padding-small) * 0.8);
+  }
+  .blocked-user-list {
+    gap: calc(var(--gap-small) * 0.8);
+    padding: calc(var(--padding-small) * 0.8);
+  }
+  .blocked-user-item {
+    padding: calc(var(--padding-small) * 0.8);
+  }
+  .user-info {
+    gap: calc(var(--gap-small) * 0.8);
+  }
+  .user-image {
+    width: 30px;
+    height: 30px;
+  }
+  .user-name {
+    font-size: calc(var(--font-size-medium) * 0.8);
+  }
+  .user-actions {
+    gap: calc(var(--gap-small) * 0.8);
+    margin-top: calc(var(--margin-small) * 0.8);
+  }
+  .report-textarea {
+    font-size: calc(var(--font-size-base) * 0.8);
+    min-height: 70px;
+  }
+  .unblock-button, .report-button {
+    font-size: calc(var(--font-size-base) * 0.8);
+    padding: calc(var(--padding-small) * 0.8);
+  }
+  .alert-dialog {
+    padding: calc(var(--padding-large) * 0.8);
+    max-width: 16rem;
+  }
+  .alert-message {
+    font-size: calc(var(--font-size-medium) * 0.8);
+  }
+  .alert-buttons {
+    gap: calc(var(--gap-small) * 0.8);
+  }
+}
+
+/* Mobile Devices (425x606 to 767px) */
+@media screen and (min-width: 425px) and (max-width: 767px) {
+  .main-container {
+    padding: var(--padding-small);
+    margin: 65px auto 65px auto;
+  }
+  .headingBlock {
+    margin-top: var(--margin-medium);
+  }
+  .card-title-blocked {
+    font-size: calc(var(--font-size-h2) * 0.9);
+  }
+  .no-users {
+    font-size: calc(var(--font-size-medium) * 0.9);
+  }
+  .card-container {
+    padding-top: var(--padding-medium);
+  }
+  .blocked-user-list {
+    gap: var(--gap-small);
+    padding: var(--padding-small);
+  }
+  .blocked-user-item {
+    padding: var(--padding-small);
+  }
+  .user-info {
+    gap: var(--gap-small);
+  }
+  .user-image {
+    width: 35px;
+    height: 35px;
+  }
+  .user-name {
+    font-size: calc(var(--font-size-medium) * 0.9);
+  }
+  .user-actions {
+    gap: var(--gap-small);
+    margin-top: var(--margin-small);
+  }
+  .report-textarea {
+    font-size: calc(var(--font-size-base) * 0.9);
+  }
+  .unblock-button, .report-button {
+    font-size: calc(var(--font-size-base) * 0.9);
+    padding: var(--padding-small);
+  }
+  .alert-dialog {
+    padding: var(--padding-medium);
+    max-width: 18rem;
+  }
+  .alert-message {
+    font-size: calc(var(--font-size-medium) * 0.9);
+  }
+  .alert-buttons {
+    gap: var(--gap-small);
+  }
+}
+
+/* Tablets (768x606 to 1439px) */
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .main-container {
+    padding: calc(var(--padding-large) * 0.8);
+    margin: 70px auto 70px auto;
+  }
+  .headingBlock {
+    margin-top: calc(var(--margin-large) * 0.8);
+  }
+  .card-title-blocked {
+    font-size: var(--font-size-h2);
+  }
+  .no-users {
+    font-size: var(--font-size-medium);
+  }
+  .card-container {
+    padding-top: calc(var(--padding-large) * 0.8);
+  }
+  .blocked-user-list {
+    gap: var(--gap-medium);
+    padding: calc(var(--padding-medium) * 0.8);
+  }
+  .blocked-user-item {
+    flex-direction: row;
+    align-items: center;
+    padding: calc(var(--padding-medium) * 0.8);
+  }
+  .user-info {
+    gap: var(--gap-medium);
+    flex: 1;
+  }
+  .user-image {
+    width: 40px;
+    height: 40px;
+  }
+  .user-name {
+    font-size: var(--font-size-medium);
+  }
+  .user-actions {
+    flex-direction: row;
+    justify-content: flex-end;
+    width: auto;
+    margin-top: 0;
+    flex-wrap: wrap;
+    gap: var(--gap-medium);
+  }
+  .report-textarea {
+    width: 300px;
+    margin-bottom: 0;
+    font-size: var(--font-size-base);
+  }
+  .unblock-button, .report-button {
+    width: auto;
+    font-size: var(--font-size-base);
+    padding: calc(var(--padding-medium) * 0.8);
+  }
+  .alert-dialog {
+    padding: calc(var(--padding-large) * 0.8);
+    max-width: 24rem;
+  }
+  .alert-message {
+    font-size: var(--font-size-medium);
+  }
+  .alert-buttons {
+    gap: var(--gap-medium);
+  }
+}
+
+/* Laptops/Desktops (1025px–1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .main-container {
+    padding: var(--padding-large);
+    margin: 80px auto 80px auto;
+  }
+  .headingBlock {
+    margin-top: var(--margin-large);
+  }
+  .card-title-blocked {
+    font-size: calc(var(--font-size-h2) * 1.1);
+  }
+  .no-users {
+    font-size: calc(var(--font-size-medium) * 1.1);
+  }
+  .card-container {
+    padding-top: var(--padding-large);
+  }
+  .blocked-user-list {
+    gap: var(--gap-large);
+    padding: var(--padding-medium);
+  }
+  .blocked-user-item {
+    flex-direction: row;
+    padding: var(--padding-medium);
+  }
+  .user-info {
+    gap: var(--gap-large);
+  }
+  .user-image {
+    width: 45px;
+    height: 45px;
+  }
+  .user-name {
+    font-size: calc(var(--font-size-medium) * 1.1);
+  }
+  .user-actions {
+    flex-direction: row;
+    justify-content: flex-end;
+    width: auto;
+    margin-top: 0;
+    gap: var(--gap-large);
+  }
+  .report-textarea {
+    width: 350px;
+    font-size: calc(var(--font-size-base) * 1.1);
+  }
+  .unblock-button, .report-button {
+    font-size: calc(var(--font-size-base) * 1.1);
+    padding: var(--padding-medium);
+  }
+  .alert-dialog {
+    padding: var(--padding-large);
+    max-width: 28rem;
+  }
+  .alert-message {
+    font-size: calc(var(--font-size-medium) * 1.1);
+  }
+  .alert-buttons {
+    gap: var(--gap-large);
+  }
+}
+
+/* PC and Laptop Screens (1440x751 to 2559px) */
+@media screen and (min-width: 1440px) and (max-width: 2559px) {
+  .main-container {
+    padding: calc(var(--padding-large) * 1.2);
+    margin: 80px auto 80px auto;
+  }
+  .headingBlock {
+    margin-top: calc(var(--margin-large) * 1.2);
+  }
+  .card-title-blocked {
+    font-size: calc(var(--font-size-h2) * 1.2);
+  }
+  .no-users {
+    font-size: calc(var(--font-size-medium) * 1.2);
+  }
+  .card-container {
+    padding-top: calc(var(--padding-large) * 1.2);
+  }
+  .blocked-user-list {
+    gap: calc(var(--gap-large) * 1.2);
+    padding: var(--padding-medium);
+  }
+  .blocked-user-item {
+    /* flex-direction: row; */
+    padding: var(--padding-medium);
+  }
+  .user-info {
+    gap: calc(var(--gap-large) * 1.2);
+  }
+  .user-image {
+    width: 48px;
+    height: 48px;
+  }
+  .user-name {
+    font-size: calc(var(--font-size-medium) * 1.2);
+  }
+  .user-actions {
+    gap: calc(var(--gap-large) * 1.2);
+  }
+  .report-textarea {
+    width: 400px;
+    font-size: calc(var(--font-size-base) * 1.2);
+  }
+  .unblock-button, .report-button {
+    font-size: calc(var(--font-size-base) * 1.2);
+    padding: calc(var(--padding-medium) * 1.2);
+  }
+  .alert-dialog {
+    padding: calc(var(--padding-large) * 1.2);
+    max-width: 30rem;
+  }
+  .alert-message {
+    font-size: calc(var(--font-size-medium) * 1.2);
+  }
+  .alert-buttons {
+    gap: calc(var(--gap-large) * 1.2);
+  }
+}
+
+/* Large PC Screens (≥2560px) */
+@media screen and (min-width: 2560px) {
+  .main-container {
+    padding: calc(var(--padding-large) * 1.5);
+    margin: 100px auto 100px auto;
+  }
+  .headingBlock {
+    margin-top: calc(var(--margin-large) * 1.5);
+  }
+  .card-title-blocked {
+    font-size: calc(var(--font-size-h2) * 1.3);
+  }
+  .no-users {
+    font-size: calc(var(--font-size-medium) * 1.3);
+  }
+  .card-container {
+    padding-top: calc(var(--padding-large) * 1.5);
+  }
+  .blocked-user-list {
+    gap: calc(var(--gap-large) * 1.5);
+    padding: calc(var(--padding-medium) * 1.5);
+  }
+  .blocked-user-item {
+    flex-direction: row;
+    padding: calc(var(--padding-medium) * 1.5);
+  }
+  .user-info {
+    gap: calc(var(--gap-large) * 1.5);
+  }
+  .user-image {
+    width: 50px;
+    height: 50px;
+  }
+  .user-name {
+    font-size: calc(var(--font-size-medium) * 1.3);
+  }
+  .user-actions {
+    gap: calc(var(--gap-large) * 1.5);
+  }
+  .report-textarea {
+    width: 450px;
+    font-size: calc(var(--font-size-base) * 1.3);
+  }
+  .unblock-button, .report-button {
+    font-size: calc(var(--font-size-base) * 1.3);
+    padding: calc(var(--padding-medium) * 1.5);
+  }
+  .alert-dialog {
+    padding: calc(var(--padding-large) * 1.5);
+    max-width: 32rem;
+  }
+  .alert-message {
+    font-size: calc(var(--font-size-medium) * 1.3);
+  }
+  .alert-buttons {
+    gap: calc(var(--gap-large) * 1.5);
+  }
+}
